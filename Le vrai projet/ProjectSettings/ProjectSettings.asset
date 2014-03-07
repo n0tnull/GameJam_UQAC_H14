@@ -11,7 +11,7 @@ PlayerSettings:
   targetResolution: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: Projet Master
+  productName: Le vrai projet
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   defaultScreenWidth: 1024
@@ -76,7 +76,7 @@ PlayerSettings:
   iPhoneBundleIdentifier: com.Company.ProductName
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
-  productGUID: cdf874b458a25ac45be1213129adc3da
+  productGUID: 9904848b9ffbac449ab6386af7b08897
   iPhoneBundleVersion: 1.0
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 9
@@ -149,7 +149,7 @@ PlayerSettings:
   flashStrippingLevel: 2
   spritePackerPolicy: 
   scriptingDefineSymbols: {}
-  metroPackageName: Projet Master
+  metroPackageName: Le vrai projet
   metroPackageLogo: 
   metroPackageVersion: 
   metroCertificatePath: 
@@ -157,7 +157,7 @@ PlayerSettings:
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: Projet Master
+  metroApplicationDescription: Le vrai projet
   metroTileLogo: 
   metroTileWideLogo: 
   metroTileSmallLogo: 
