@@ -1,0 +1,26 @@
+style: platformer-competition
+
+theme: crafting
+
+competition: 2 joueurs s'entraident a completer un niveau en craftant le level. Score final avec temps, mort et
+ 		nbr de platformes
+
+		x blocs (limité) 
+
+		crafting
+
+		colissions
+
+		ennemies qui faut éviter
+
+		Craft le lvl en même temps
+
+		ennemies qui pete les plateforms ?
+
+		horizontal 
+
+		caméra zoom in/out dépendament de la positon du curseur
+
+		UI 
+		
+		Peinture à la portal
