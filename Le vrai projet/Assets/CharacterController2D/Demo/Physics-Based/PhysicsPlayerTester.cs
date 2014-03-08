@@ -48,17 +48,8 @@ public class PhysicsPlayerTester : MonoBehaviour
 
 	void onControllerCollider( RaycastHit2D hit )
 	{
-		if(hit.transform.name == "IceBloc")
-		{
-			onIce = true;
-		}
-	}
-
-	void OnCollisionEnter2D(Collision2D collider)
-	{
 
 	}
-
 
 	void onTriggerEnterEvent( Collider2D col )
 	{
@@ -78,13 +69,6 @@ public class PhysicsPlayerTester : MonoBehaviour
 	void Update()
 	{
 		movementChecks();
-
-		if (Input.GetButton ("Fire1")) {
-			onIce = true;
-		} else 
-		{
-			onIce = false;
-		}
 		  
 	}
 
@@ -137,7 +121,7 @@ public class PhysicsPlayerTester : MonoBehaviour
 
 	void OnIceExit()
 	{
-		onIce = true;
+		onIce = false;
 	}
 
 	void Death()
