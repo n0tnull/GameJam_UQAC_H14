@@ -136,7 +136,12 @@ public class PhysicsPlayerTester : MonoBehaviour
 	void Disappear()
 	{
 		Death ();
-		gameObject.SetActive(false);
+	}
+
+	public void Revive()
+	{
+		dead = false;
+		_animator.Play( Animator.StringToHash( "Idle" ) );
 	}
 
 	void FixedUpdate()
