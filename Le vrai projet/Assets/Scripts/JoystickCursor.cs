@@ -17,16 +17,13 @@ public class JoystickCursor : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-<<<<<<< HEAD
+		
 		//transform.Translate (Input.GetAxis ("Horizontal")*moveSensitivity, Input.GetAxis ("Vertical")*moveSensitivity, 0);
 
 		transform.Translate (Input.GetAxis ("Mouse X")*moveSensitivity, Input.GetAxis ("Mouse Y")*moveSensitivity, 0);
-=======
 		transform.Translate (Input.GetAxis ("(P2) HorizontalJoy")*moveSensitivity, Input.GetAxis ("(P2) VerticalJoy")*moveSensitivity, 0);
 
 		//transform.Translate (Input.GetAxis ("Mouse X")*moveSensitivity, Input.GetAxis ("Mouse Y")*moveSensitivity, 0);
->>>>>>> 7d1906a49bb5993c25d7007a37e52a90f6e3082b
 
 		if (heldObject != null)
 		{
@@ -34,25 +31,19 @@ public class JoystickCursor : MonoBehaviour {
 			                                             Mathf.Lerp(heldObject.transform.position.y, transform.position.y, 0.5f),
 			                                             0);
 		}
-
-<<<<<<< HEAD
+		
 		if (Input.GetButtonDown ("Fire1") || Input.GetMouseButtonDown(0))
-=======
 		if (Input.GetButtonDown ("(P2) GrabReleaseObject")/* || Input.GetMouseButtonDown(0)*/)
->>>>>>> 7d1906a49bb5993c25d7007a37e52a90f6e3082b
 		{
 			if (heldObject)
 				releaseObject ();
 			else
 				grabObject ();
 		}
-
-<<<<<<< HEAD
+		
 		if (Input.GetButtonDown ("Fire3") || Input.GetMouseButtonDown(1))
 			Debug.Log ("Nice, t'as pesé sur X.");
 
-=======
->>>>>>> 7d1906a49bb5993c25d7007a37e52a90f6e3082b
 	}
 
 	void grabObject()

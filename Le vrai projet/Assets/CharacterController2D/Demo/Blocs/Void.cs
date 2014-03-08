@@ -21,5 +21,9 @@ public class Void : MonoBehaviour {
 			CharacterController2D character = other.GetComponent<CC2DTriggerHelper>().getParentCharacterController();
 			character.GetComponent<PhysicsPlayerTester>().SendMessage("Disappear");
 		}
+		else
+		{
+			Debug.Log ("COLLISION");
+		}
 	}
 }
