@@ -85,8 +85,28 @@ public class PhysicsPlayerTester : MonoBehaviour
 		// a minor bit of trickery here. FixedUpdate sets _up to false so to ensure we never miss any jump presses we leave _up
 		// set to true if it was true the previous frame
 		_up = _up || Input.GetButtonDown("Jump" );
-		var direction = Input.GetAxis("Horizontal");
-		
+
+		var direction = 0f;
+
+		if (Input.GetKey(KeyCode.RightArrow)) 
+		{
+			direction = 1;
+		}
+		else if(Input.GetKey(KeyCode.LeftArrow)) 
+		{
+			direction = -1;
+		}
+		else
+		{
+			direction = 0;
+		}
+
+		if(Input.GetAxis("HorizontalJoy") != 0)
+		{
+			direction = Input.GetAxis("HorizontalJoy");
+		}
+
+		Debug.Log (Input.GetAxis("HorizontalJoy"));
 		if (direction > 0) { //AxisDown
 			_right = true;
 			_left = false;
@@ -101,6 +121,16 @@ public class PhysicsPlayerTester : MonoBehaviour
 			_right = false;
 			barPressed = false;
 		}
+	}
+
+	void OnIceEnter()
+	{
+		onIce = true;
+	}
+
+	void OnIceExit()
+	{
+		onIce = true;
 	}
 
 
