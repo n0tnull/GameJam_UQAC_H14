@@ -6,16 +6,16 @@ public abstract class Enemy : MonoBehaviour {
 	protected Vector3 _SpawnPosition;
 
 	// Use this for initialization
-	void Start () {
+	protected virtual void Start () {
 		gameObject.tag = "Enemy";
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	protected virtual void Update () {
 		// Nothing !
 	}
 
-	virtual protected void evilThing (){
+	protected virtual void evilThing (){
 		// Do evil thing here.
 		// Killing players for exemple.
 		// And don't forget to eat cookies !
