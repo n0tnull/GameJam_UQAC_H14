@@ -15,8 +15,8 @@ public class TeamsScore : MonoBehaviour {
 		score[gameObject.GetComponent<StartRace>().team-1] = transform.position.x - begin.x;
 	}
 
-	float getScore(int team)
+	public int getScore(int team)
 	{
-		return score[team];
+		return  (int)score[team-1];
 	}
 }

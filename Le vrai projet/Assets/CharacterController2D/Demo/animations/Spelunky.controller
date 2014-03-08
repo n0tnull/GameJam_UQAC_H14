@@ -87,10 +87,10 @@ State:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Idle
-  m_Speed: 1
+  m_Speed: .0799999982
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 6153ea4e6948a48e6add9c5a244e15f4, type: 2}
+  - {fileID: 7400000, guid: eaa6ac90e744052449d59a73d324b170, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
   m_Position: {x: 72, y: 156, z: 0}
   m_IKOnFeet: 0
@@ -102,10 +102,10 @@ State:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Run
-  m_Speed: 1
+  m_Speed: .800000012
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 33aa910796b8d4519ad163e359b9e66d, type: 2}
+  - {fileID: 7400000, guid: 624ce5f920ed6454496306a7fe26a938, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
   m_Position: {x: 168, y: 240, z: 0}
   m_IKOnFeet: 0
@@ -120,7 +120,7 @@ State:
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: ef2955bc4bdba448db8231f486deffd7, type: 2}
+  - {fileID: 7400000, guid: c4d2bff934f0faa4a8f97b60952cdfcf, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
   m_Position: {x: 372, y: 144, z: 0}
   m_IKOnFeet: 0

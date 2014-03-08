@@ -10,6 +10,7 @@ public class TextDisplayScript : MonoBehaviour {
 	private StartRace race;
 	private PhysicsPlayerTester playerPhysics;
 	private CharacterDeath playerDeath;
+	private TeamsScore score;
 
 	// Use this for initialization
 	void Start () {
@@ -17,6 +18,8 @@ public class TextDisplayScript : MonoBehaviour {
 		race = player.GetComponent<StartRace>();
 		playerPhysics = player.GetComponent<PhysicsPlayerTester>();
 		playerDeath = player.GetComponent<CharacterDeath>();
+		score = player.GetComponent<TeamsScore>();
+
 	}
 	
 	// Update is called once per frame
@@ -44,8 +47,7 @@ public class TextDisplayScript : MonoBehaviour {
 			GUI.Label(new Rect(Screen.width/2-50,Screen.height/2-heightOffset,150,100), 
 			          "La partie est terminée.");
 		}
-
-		GUI.Label(new Rect(Screen.width-50, 10, 100, 20), "" + race.GameTimer.ToString("F2") + " pts");
+		GUI.Label(new Rect(Screen.width-50, 10, 100, 20), "" + score.getScore(race.GetTeam()) + " pts");
 
 		GUI.Label(new Rect(10, 10, 100, 20), "" + race.GameTimer.ToString("F2"));
 	}
