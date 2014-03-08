@@ -49,11 +49,6 @@ public class FallingBloc : MonoBehaviour
 		}
 	}
 
-	public void Shake()
-	{
-		shaking = true;
-	}
-
 	/*void OnCollisionEnter2D(Collision2D collider)
 	{
 		if(secondState)
@@ -72,9 +67,15 @@ public class FallingBloc : MonoBehaviour
 		{
 			if(collider.GetComponent<CC2DTriggerHelper>().getParentCharacterController().collisionState.below)
 			{
-				Debug.Log ("Par le dessus");
-				//shaking = true;
+				if(!falling)
+					shaking = true;
 			}
+		}
+		else
+		{
+			if(secondState)
+				falling = false;
+			Debug.Log ("TATA");
 		}
 	}
 }

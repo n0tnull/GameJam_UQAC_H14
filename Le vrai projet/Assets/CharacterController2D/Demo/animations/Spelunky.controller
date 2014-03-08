@@ -8,11 +8,11 @@ AnimatorController:
   m_Name: Spelunky
   serializedVersion: 2
   m_AnimatorParameters:
-  - m_Name: dead
+  - m_Name: Dead
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 1
+    m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 3
@@ -38,7 +38,7 @@ Transition:
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 5
-    m_ConditionEvent: dead
+    m_ConditionEvent: Dead
     m_EventTreshold: 0
     m_ExitTime: 1
   m_Atomic: 1
@@ -56,7 +56,7 @@ Transition:
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 5
-    m_ConditionEvent: dead
+    m_ConditionEvent: Dead
     m_EventTreshold: 0
     m_ExitTime: 1
   m_Atomic: 1
@@ -70,15 +70,15 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 0}
   m_DstState: {fileID: 110200000}
-  m_TransitionDuration: .100000001
+  m_TransitionDuration: .695652187
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 5
     m_ConditionEvent: 
     m_EventTreshold: 0
-    m_ExitTime: .899999976
+    m_ExitTime: .304347783
   - m_ConditionMode: 1
-    m_ConditionEvent: dead
+    m_ConditionEvent: Dead
     m_EventTreshold: 0
     m_ExitTime: .899999976
   m_Atomic: 1
@@ -93,7 +93,7 @@ State:
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 0}
+  - {fileID: 7400000, guid: 6b2e6f7e30c844444a6f03ab4a022e57, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
   m_Position: {x: 120, y: 24, z: 0}
   m_IKOnFeet: 0
@@ -177,9 +177,6 @@ StateMachine:
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110200000}
-      second: []
-    data:
       first: {fileID: 0}
       second:
       - {fileID: 110115088}
@@ -197,6 +194,9 @@ StateMachine:
     data:
       first: {fileID: 110231807}
       second: []
+    data:
+      first: {fileID: 110200000}
+      second: []
   m_MotionSetCount: 1
-  m_AnyStatePosition: {x: 360, y: 24, z: 0}
+  m_AnyStatePosition: {x: 372, y: 24, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}

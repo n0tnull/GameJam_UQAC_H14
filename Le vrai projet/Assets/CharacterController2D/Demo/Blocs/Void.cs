@@ -1,29 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PicsBloc : MonoBehaviour 
-{
+public class Void : MonoBehaviour {
+
 	// Use this for initialization
-	void Start () 
-	{
-		
+	void Start () {
+	
 	}
 	
 	// Update is called once per frame
-	void Update () 
-	{
-		
+	void Update () {
+	
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if(other.name.Equals("PlayerTriggerHelper"))
+		Debug.Log ("OnDisappearCollision");
+		if(other.gameObject.name == "PlayerTriggerHelper")
 		{
 			CharacterController2D character = other.GetComponent<CC2DTriggerHelper>().getParentCharacterController();
-			if(character.collisionState.below)
-			{
-				character.GetComponent<PhysicsPlayerTester>().SendMessage("Death");
-			}
+			character.GetComponent<PhysicsPlayerTester>().SendMessage("Disappear");
 		}
 	}
 }

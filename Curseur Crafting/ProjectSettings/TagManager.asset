@@ -3,7 +3,7 @@
 --- !u!78 &1
 TagManager:
   tags:
-  - Bloc
+  - movable
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
@@ -41,4 +41,12 @@ TagManager:
   - name: Default
     userID: 0
     uniqueID: 0
+    locked: 0
+  - name: Le reste
+    userID: 2
+    uniqueID: 3385499313
+    locked: 0
+  - name: Cursor
+    userID: 1
+    uniqueID: 1698030419
     locked: 0

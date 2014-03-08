@@ -88,6 +88,8 @@ MonoBehaviour:
   groundDamping: 10
   inAirDamping: 5
   jumpHeight: 3
+  dead: 0
+  _lostUI: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -125,7 +127,7 @@ MonoBehaviour:
     m_PostInfinity: 2
   totalHorizontalRays: 8
   totalVerticalRays: 4
-  createTriggerHelperGameObject: 0
+  createTriggerHelperGameObject: 1
   triggerHelperBoxColliderScale: .949999988
   transform: {fileID: 0}
   boxCollider: {fileID: 0}
