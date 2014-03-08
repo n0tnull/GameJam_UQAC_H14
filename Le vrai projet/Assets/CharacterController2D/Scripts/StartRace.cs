@@ -9,14 +9,12 @@ public class StartRace : MonoBehaviour {
 	private float starTimerAcc = 0;
 	public int team = 1;
 	GameObject startPoint;
-	private GUIText _lostUI;
 	private float playerTimer = 0;
 	private bool playerTimerStarted = false;
 
 	// Use this for initialization
 	void Start () 
 	{
-		_lostUI = GameObject.Find ("LostUI").GetComponent<GUIText>();
 		startPoint = GameObject.Find ("Start");
 		Time.timeScale = 0;
 	}
@@ -24,6 +22,7 @@ public class StartRace : MonoBehaviour {
 	public bool RaceStarted {get {return started;} }
 	public float TimeBeforeStart {get {return starTimer-starTimerAcc+1;}}
 	public bool TimerVisible {get {return inTimer;}}
+	public float GameTimer { get { return playerTimer;} }
 	
 	// Update is called once per frame
 	void Update () {
@@ -95,13 +94,16 @@ public class StartRace : MonoBehaviour {
 		}
 		else if(team == 2)
 		{
-			_lostUI.enabled = true;
-			_lostUI.text = "La partie est terminé!";
 		}
 	}
 
-	void OnGUI()
+	public int GetTeam()
+	{
+		return team;
+	}
+
+	/*void OnGUI()
 	{
 		GUI.Label(new Rect(10, 10, 100, 20), ""+ playerTimer.ToString("F2"));
-	}
+	}*/
 }
