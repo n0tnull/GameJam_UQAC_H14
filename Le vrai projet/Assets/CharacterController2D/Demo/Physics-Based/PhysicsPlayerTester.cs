@@ -49,8 +49,10 @@ public class PhysicsPlayerTester : MonoBehaviour
 
 	void onControllerCollider( RaycastHit2D hit )
 	{
-		if (isDeadly(hit.collider.gameObject)){
-			Death();
+		if (!dead){
+			if (isDeadly(hit.collider.gameObject)){
+				Death();
+			}
 		}
 	}
 
@@ -136,7 +138,12 @@ public class PhysicsPlayerTester : MonoBehaviour
 	void Disappear()
 	{
 		Death ();
-		gameObject.SetActive(false);
+	}
+
+	public void Revive()
+	{
+		dead = false;
+		_animator.Play( Animator.StringToHash( "Idle" ) );
 	}
 
 	void FixedUpdate()
