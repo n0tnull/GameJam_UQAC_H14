@@ -42,6 +42,7 @@ public class PhysicsPlayerTester : MonoBehaviour
 		_controller.onControllerCollidedEvent += onControllerCollider;
 		_controller.onTriggerEnterEvent += onTriggerEnterEvent;
 		_controller.onTriggerExitEvent += onTriggerExitEvent;
+		_lostUI.enabled = false;
 	}
 
 
@@ -130,13 +131,8 @@ public class PhysicsPlayerTester : MonoBehaviour
 	{
 		Debug.Log ("Death");
 		dead = true;
+		_lostUI.enabled = true;
 		_lostUI.text = "You Lost";
-	}
-
-	void Disappear()
-	{
-		Debug.Log ("Disappear");
-		Death ();
 	}
 
 	void FixedUpdate()
@@ -149,7 +145,6 @@ public class PhysicsPlayerTester : MonoBehaviour
 
 		if(dead)
 		{
-			normalizedHorizontalSpeed = 0;
 			if( _controller.isGrounded )
 				_animator.Play( Animator.StringToHash( "Death" ) );
 		}
