@@ -45,3 +45,7 @@ TagManager:
     userID: 0
     uniqueID: 0
     locked: 0
+  - name: Curseur
+    userID: 1
+    uniqueID: 43558565
+    locked: 0

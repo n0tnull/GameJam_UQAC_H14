@@ -843,7 +843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7390c81c448d04dbe7977f2f7ee226, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSensitivity: 1
+  moveSensitivity: .300000012
   spawnableObject: {fileID: 0}
 --- !u!212 &809616643
 SpriteRenderer:
@@ -863,10 +863,10 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayer: 0
+  m_SortingLayer: 1
   m_SortingOrder: 0
-  m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: 2209b94e8d94937489efbf9b195a6a54, type: 3}
+  m_SortingLayerID: 43558565
+  m_Sprite: {fileID: 21300000, guid: d7b10cfe5b5454fc1989b1843d2b9bb3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &809616644
 Transform:
@@ -1677,6 +1677,7 @@ GameObject:
   - 124: {fileID: 1109752631}
   - 81: {fileID: 1109752630}
   - 114: {fileID: 1109752635}
+  - 114: {fileID: 1109752636}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1725,7 +1726,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7
+  orthographic size: 13
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1761,6 +1762,20 @@ MonoBehaviour:
   transform: {fileID: 0}
   cameraOffset: {x: 0, y: 0, z: 17}
   useFixedUpdate: 0
+--- !u!114 &1109752636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1109752629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fb67281fec7b46ef8e70f541dceea22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftOffset: 100
+  heightOffset: 75
+  displaySkin: {fileID: 11400000, guid: 8ba73a81d44d740299e5045f2706bdc4, type: 2}
 --- !u!1 &1204677527
 GameObject:
   m_ObjectHideFlags: 0
