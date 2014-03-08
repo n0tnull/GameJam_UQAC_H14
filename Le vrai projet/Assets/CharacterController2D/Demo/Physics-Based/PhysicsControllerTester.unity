@@ -142,7 +142,6 @@ MonoBehaviour:
   inAirDamping: 5
   jumpHeight: 3
   dead: 0
-  _lostUI: {fileID: 994322897}
 --- !u!114 &2896890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1328,7 +1327,7 @@ GUIText:
   m_GameObject: {fileID: 994322896}
   m_Enabled: 1
   serializedVersion: 3
-  m_Text: Vous avez perdu
+  m_Text: 
   m_Anchor: 0
   m_Alignment: 0
   m_PixelOffset: {x: 0, y: 0}
