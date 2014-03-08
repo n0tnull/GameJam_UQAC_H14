@@ -15,9 +15,11 @@ GameObject:
   - 61: {fileID: 6100000}
   - 50: {fileID: 5000000}
   - 114: {fileID: 11400004}
+  - 114: {fileID: 11400008}
+  - 114: {fileID: 11400006}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +31,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.31991386, y: .9532125, z: 0}
+  m_LocalPosition: {x: -14.2179432, y: 2.11507702, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -44,7 +46,7 @@ Rigidbody2D:
   m_AngularDrag: .0500000007
   m_GravityScale: 0
   m_FixedAngle: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -90,7 +92,6 @@ MonoBehaviour:
   inAirDamping: 5
   jumpHeight: 3
   dead: 0
-  _lostUI: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -106,11 +107,11 @@ MonoBehaviour:
   skinWidth: .0199999996
   platformMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 512
   oneWayPlatformMask:
     serializedVersion: 2
-    m_Bits: 512
-  slopeLimit: 30
+    m_Bits: 0
+  slopeLimit: 70
   slopeSpeedMultiplier:
     serializedVersion: 2
     m_Curve:
@@ -129,7 +130,7 @@ MonoBehaviour:
   totalHorizontalRays: 8
   totalVerticalRays: 4
   createTriggerHelperGameObject: 1
-  triggerHelperBoxColliderScale: .949999988
+  triggerHelperBoxColliderScale: .999000013
   transform: {fileID: 0}
   boxCollider: {fileID: 0}
   rigidBody2D: {fileID: 0}
@@ -142,6 +143,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7afcd9cf32d1d54b9e40059199ab69b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 1
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cad37859cefe5243b866f4b087b916e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11400008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffe4c4c43f7fd6d4cb7e0f1d3c325b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &21200000

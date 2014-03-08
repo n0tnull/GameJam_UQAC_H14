@@ -4,64 +4,67 @@ using System.Collections;
 public class JoystickCursor : MonoBehaviour {
 
 	public float moveSensitivity = 1.0f;
-	public GameObject spawnableObject;
+	public GameObject[] spawnableObjects;
 
 	private GameObject heldObject;
 	private Vector3 objectCameraPosition;
+	private int selectedObject = 0;
+
+	private GameObject player;
+	private StartRace race;
 
 	// Use this for initialization
 	void Start () {
 
 		//Screen.lockCursor = true;
 
-
+		player = GameObject.Find("Player");
+		race = player.GetComponent<StartRace>();
 	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
-		//transform.Translate (Input.GetAxis ("Horizontal")*moveSensitivity, Input.GetAxis ("Vertical")*moveSensitivity, 0);
-
-		transform.Translate (Input.GetAxis ("(P2) Mouse X")*moveSensitivity, Input.GetAxis ("(P2) Mouse Y")*moveSensitivity, 0);
-		transform.Translate (Input.GetAxis ("(P2) HorizontalJoy")*moveSensitivity, Input.GetAxis ("(P2) VerticalJoy")*moveSensitivity, 0);
-		objectCameraPosition = Camera.main.WorldToViewportPoint (transform.position);
-
-		if (objectCameraPosition.x < 0)
-			transform.Translate (1, 0, 0);
-
-		if (objectCameraPosition.x > 1)
-			transform.Translate (-1, 0, 0);
-
-		if (objectCameraPosition.y < 0)
-			transform.Translate (0, 1, 0);
-		
-		if (objectCameraPosition.y > 1)
-			transform.Translate (0, -1, 0);
-
-
-		Debug.Log ("xMin = " + Camera.main.pixelRect.xMin
-		       + ", xMax = " + Camera.main.pixelRect.xMax
-		       + ", yMin = " + Camera.main.pixelRect.yMin
-		       + ", yMax = " + Camera.main.pixelRect.yMax);
-
-		transform.Translate (Input.GetAxis ("(P2) Mouse X")*moveSensitivity, Input.GetAxis ("(P2) Mouse Y")*moveSensitivity, 0);
-
-		if (heldObject != null)
+		if (race.RaceStarted)
 		{
-			heldObject.transform.position = new Vector3 (Mathf.Lerp(heldObject.transform.position.x, transform.position.x, 0.5f),
-			                                             Mathf.Lerp(heldObject.transform.position.y, transform.position.y, 0.5f),
-			                                             0);
-		}
-
-		if (Input.GetButtonDown ("(P2) GrabReleaseObject") || Input.GetMouseButtonDown(0))
-		{
+			transform.Translate (Input.GetAxis ("(P2) Mouse X") * moveSensitivity, Input.GetAxis ("(P2) Mouse Y") * moveSensitivity, 0);
+			transform.Translate (Input.GetAxis ("(P2) HorizontalJoy") * moveSensitivity, Input.GetAxis ("(P2) VerticalJoy") * moveSensitivity, 0);
+			
+			objectCameraPosition = Camera.main.WorldToViewportPoint (transform.position);
+			
+			if (objectCameraPosition.x < 0)
+				transform.Translate (1, 0, 0);
+			
+			if (objectCameraPosition.x > 1)
+				transform.Translate (-1, 0, 0);
+			
+			if (objectCameraPosition.y < 0)
+				transform.Translate (0, 1, 0);
+			
+			if (objectCameraPosition.y > 1)
+				transform.Translate (0, -1, 0);
+			
+			transform.Translate (Input.GetAxis ("(P2) Mouse X") * moveSensitivity, Input.GetAxis ("(P2) Mouse Y") * moveSensitivity, 0);
+			
 			if (heldObject)
-				releaseObject ();
-			else
-				grabObject ();
-		}
+			{
+				heldObject.transform.position = new Vector3 (Mathf.Lerp (heldObject.transform.position.x, transform.position.x, 0.5f),
+			                                 				 Mathf.Lerp (heldObject.transform.position.y, transform.position.y, 0.5f),
+			                                 				 0);
+			}
+			
+			if (Input.GetButtonDown ("(P2) GrabReleaseObject"))
+			{
+				if (heldObject)
+					releaseObject ();
+				else
+					grabObject ();
+			}
+			
+			if (Input.GetButtonDown ("(P2) SpawnObject") && !heldObject)
+				spawnObject ();
 
+		}
 	
 	}
 
@@ -73,6 +76,7 @@ public class JoystickCursor : MonoBehaviour {
 			{
 				heldObject = c.gameObject;
 
+				heldObject.collider2D.enabled = false;
 				heldObject.GetComponent<SpriteRenderer>().sortingOrder = 1;
 
 				return;
@@ -86,9 +90,11 @@ public class JoystickCursor : MonoBehaviour {
 		{
 			//Debug.Log ("d = " + d + ", q = " + q + ", D = " + D + ", r = " + r + ", choix = " + choix + ", position_nouvelle = " + position_nouvelle);
 
-			heldObject.transform.position = new Vector3(calculateGrid (heldObject.transform.position.x, 3), 
-			                                            calculateGrid (heldObject.transform.position.y, 3), 
+			heldObject.transform.position = new Vector3(calculateGrid (heldObject.transform.position.x, 1), 
+			                                            calculateGrid (heldObject.transform.position.y, 1), 
 			                                            heldObject.transform.position.z);
+
+			heldObject.collider2D.enabled = true;
 
 			heldObject = null;
 		}
@@ -114,5 +120,12 @@ public class JoystickCursor : MonoBehaviour {
 		}
 
 		return position_nouvelle;
+	}
+
+	void spawnObject()
+	{
+		heldObject = Instantiate (spawnableObjects [selectedObject]) as GameObject;
+		heldObject.collider2D.enabled = false;
+		heldObject.transform.position = transform.position;
 	}
 }
