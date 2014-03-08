@@ -9,12 +9,14 @@ public class TextDisplayScript : MonoBehaviour {
 	private GameObject player;
 	private StartRace race;
 	private PhysicsPlayerTester playerPhysics;
+	private CharacterDeath playerDeath;
 
 	// Use this for initialization
 	void Start () {
 		player = GameObject.Find("Player");
 		race = player.GetComponent<StartRace>();
 		playerPhysics = player.GetComponent<PhysicsPlayerTester>();
+		playerDeath = player.GetComponent<CharacterDeath>();
 	}
 	
 	// Update is called once per frame
@@ -32,10 +34,19 @@ public class TextDisplayScript : MonoBehaviour {
 			GUI.Label(new Rect(Screen.width/2-5,Screen.height/2-75,300,100), "" + (int) race.TimeBeforeStart);
 		}
 
-		if(playerPhysics.dead){
-			GUI.Label(new Rect(Screen.width/2-50,Screen.height/2-heightOffset,150,100), "Vous etes mort !");
+		if(playerPhysics.dead && race.GetTeam() == 1){
+			GUI.Label(new Rect(Screen.width/2-75,Screen.height/2-heightOffset,175,100), 
+			          "Vous etes morts!\nRespawn dans " + (int)playerDeath.timeSinceDeath + " secondes.");
 		}
 
+		if(playerPhysics.dead && race.GetTeam() == 2){
+			GUI.Label(new Rect(Screen.width/2-50,Screen.height/2-heightOffset,150,100), 
+			          "La partie est terminée.");
+		}
+
+		GUI.Label(new Rect(Screen.width-50, 10, 100, 20), "" + race.GameTimer.ToString("F2") + " pts");
+
+		GUI.Label(new Rect(10, 10, 100, 20), "" + race.GameTimer.ToString("F2"));
 	}
 
 	void showCenterLabel(string s){
