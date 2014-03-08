@@ -27,6 +27,11 @@ public class DoodleJump : Enemy
 					StartCoroutine(WaitingForJump());
 			}
 		}
+
+		if(coll.gameObject.tag == "Player")
+		{
+			coll.gameObject.GetComponent<PhysicsPlayerTester>().SendMessage("Death");	
+		}
 	}
 
 	IEnumerator WaitingForJump()

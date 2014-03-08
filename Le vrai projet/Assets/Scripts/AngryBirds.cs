@@ -39,9 +39,15 @@ public class AngryBirds : Enemy {
 
 	void OnCollisionEnter2D(Collision2D coll) {
 		//Debug.Log("collision of AngryBirds with " + coll.gameObject.tag);
+
 		if (coll.gameObject.tag == "Bloc") {
 					movingLeft = !movingLeft;
 			}
+		if(coll.gameObject.tag == "Player")
+		{
+			Debug.Log(  coll.gameObject.name );
+			coll.gameObject.GetComponent<PhysicsPlayerTester>().SendMessage("Death");	
+		}
 	}
 
 }

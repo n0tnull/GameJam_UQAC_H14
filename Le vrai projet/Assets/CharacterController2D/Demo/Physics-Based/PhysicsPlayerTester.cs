@@ -49,8 +49,10 @@ public class PhysicsPlayerTester : MonoBehaviour
 
 	void onControllerCollider( RaycastHit2D hit )
 	{
-		if (isDeadly(hit.collider.gameObject)){
-			Death();
+		if (!dead){
+			if (isDeadly(hit.collider.gameObject)){
+				Death();
+			}
 		}
 	}
 

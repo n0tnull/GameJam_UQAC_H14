@@ -20,6 +20,8 @@ public class StartRace : MonoBehaviour {
 		startPoint = GameObject.Find ("Start");
 		Time.timeScale = 0;
 	}
+
+	public bool RaceStarted {get {return started;} }
 	
 	// Update is called once per frame
 	void Update () {
