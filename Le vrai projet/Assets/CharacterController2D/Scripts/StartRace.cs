@@ -27,7 +27,7 @@ public class StartRace : MonoBehaviour {
 	void Update () {
 		if(!started)
 		{
-			if(Input.GetKeyDown (KeyCode.Space))
+			if(Input.GetKeyDown (KeyCode.Space) || Input.GetButtonDown("(P1) Jump"))
 			{
 				inTimer = true;
 				Time.timeScale = 1;

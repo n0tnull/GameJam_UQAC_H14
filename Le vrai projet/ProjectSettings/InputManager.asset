@@ -19,7 +19,7 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
-    joyNum: 2
+    joyNum: 1
   - serializedVersion: 3
     m_Name: (P1) Vertical
     descriptiveName: 
@@ -99,7 +99,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 0
-    joyNum: 1
+    joyNum: 2
   - serializedVersion: 3
     m_Name: (P2) VerticalJoy
     descriptiveName: 
@@ -115,7 +115,7 @@ InputManager:
     invert: 1
     type: 2
     axis: 1
-    joyNum: 1
+    joyNum: 2
   - serializedVersion: 3
     m_Name: (P2) Mouse X
     descriptiveName: 
@@ -131,7 +131,7 @@ InputManager:
     invert: 0
     type: 1
     axis: 0
-    joyNum: 1
+    joyNum: 2
   - serializedVersion: 3
     m_Name: (P2) Mouse Y
     descriptiveName: 
@@ -147,7 +147,7 @@ InputManager:
     invert: 0
     type: 1
     axis: 1
-    joyNum: 1
+    joyNum: 2
   - serializedVersion: 3
     m_Name: (P2) Mouse ScrollWheel
     descriptiveName: 
@@ -163,7 +163,7 @@ InputManager:
     invert: 0
     type: 1
     axis: 2
-    joyNum: 1
+    joyNum: 2
   - serializedVersion: 3
     m_Name: (P2) LeftClick
     descriptiveName: 
@@ -179,7 +179,7 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
-    joyNum: 1
+    joyNum: 2
   - serializedVersion: 3
     m_Name: (P2) MidClick
     descriptiveName: 
@@ -195,7 +195,7 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
-    joyNum: 1
+    joyNum: 2
   - serializedVersion: 3
     m_Name: (P2) RightClick
     descriptiveName: 
@@ -211,7 +211,7 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
-    joyNum: 1
+    joyNum: 2
   - serializedVersion: 3
     m_Name: (P2) GrabReleaseObject
     descriptiveName: 
@@ -227,4 +227,4 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
-    joyNum: 1
+    joyNum: 2
