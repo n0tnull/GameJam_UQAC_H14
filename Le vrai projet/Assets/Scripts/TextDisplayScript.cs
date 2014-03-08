@@ -29,7 +29,7 @@ public class TextDisplayScript : MonoBehaviour {
 		}
 
 		if (race.TimeBeforeStart > 0 && race.TimerVisible){
-			GUI.Label(new Rect(Screen.width/2-leftOffset,Screen.height/2-heightOffset,300,100), "" + (int) race.TimeBeforeStart);
+			GUI.Label(new Rect(Screen.width/2-5,Screen.height/2-75,300,100), "" + (int) race.TimeBeforeStart);
 		}
 
 		if(playerPhysics.dead){
