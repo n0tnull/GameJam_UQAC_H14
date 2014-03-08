@@ -162,7 +162,7 @@ MonoBehaviour:
   oneWayPlatformMask:
     serializedVersion: 2
     m_Bits: 512
-  slopeLimit: 30
+  slopeLimit: 70
   slopeSpeedMultiplier:
     serializedVersion: 2
     m_Curve:
@@ -371,6 +371,87 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 70261642}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &131559628
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 07e2613df3a18d74fb885ad53922454f, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 131559632}
+  - 212: {fileID: 131559631}
+  - 114: {fileID: 131559630}
+  - 60: {fileID: 131559629}
+  m_Layer: 0
+  m_Name: ElectricBloc
+  m_TagString: Bloc
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!60 &131559629
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 131559628}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Poly:
+    m_Paths:
+    - - {x: 2.52999997, y: 2.55999994}
+      - {x: -2.55999994, y: -2.52999997}
+      - {x: -2.55999994, y: -2.55999994}
+      - {x: 2.55999994, y: -2.55999994}
+      - {x: 2.55999994, y: 2.55999994}
+--- !u!114 &131559630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 07e2613df3a18d74fb885ad53922454f,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 131559628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc0d77c89f16d2c4581c88375b3b8ce2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!212 &131559631
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 21200000, guid: 07e2613df3a18d74fb885ad53922454f,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 131559628}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+  m_Sprite: {fileID: 21300000, guid: 9df5f8a850ab24aa086a488355db8156, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &131559632
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 07e2613df3a18d74fb885ad53922454f, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 131559628}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.72622585, y: -.333502293, z: 0}
+  m_LocalScale: {x: .613341391, y: .61334157, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &322936949
 GameObject:
   m_ObjectHideFlags: 0
@@ -1987,6 +2068,10 @@ Prefab:
       propertyPath: _lostUI
       value: 
       objectReference: {fileID: 994322897}
+    - target: {fileID: 11400002, guid: 466d7be2eedc350478a91cb67cf45d76, type: 2}
+      propertyPath: slopeLimit
+      value: 70
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 466d7be2eedc350478a91cb67cf45d76, type: 2}
   m_RootGameObject: {fileID: 2896886}
