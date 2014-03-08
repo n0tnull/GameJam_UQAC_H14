@@ -13,21 +13,30 @@ public class IceBloc : MonoBehaviour {
 	
 	}
 
-	/*void OnCollisionEnter2D(Collision2D collider)
+
+	void OnTriggerEnter2D(Collider2D other)
 	{
-		if(collider.gameObject == GameObject.Find ("Player"))
+		Debug.Log(other.gameObject.name);
+		if(other.gameObject.name == "PlayerTriggerHelper")
 		{
-			if(collider.transform.position.y - 0.98 <= transform.position.y)
-				collider.gameObject.SendMessage("OnIceEnter");
+			if(other.GetComponent<CC2DTriggerHelper>().getParentCharacterController().collisionState.below)
+			{
+				Debug.Log("ok");
+				other.gameObject.SendMessage("OnIceEnter");
+			}
+		}
+	}
+
+	void OnTriggerExit2D(Collider2D other)
+	{
+		if(other.gameObject.name == "PlayerTriggerHelper")
+		{
+			other.gameObject.SendMessage("OnIceExit");
 		}
 	}
 
 	void OnCollisionExit2D(Collision2D collider)
 	{
-		if(collider.gameObject == GameObject.Find ("Player"))
-		{
-			if(collider.transform.position.y - 0.98 <= transform.position.y)
-				collider.gameObject.SendMessage("OnIceExit");
-		}
-	}*/
+
+	}
 }

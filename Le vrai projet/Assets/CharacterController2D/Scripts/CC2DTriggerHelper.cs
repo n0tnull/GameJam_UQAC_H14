@@ -15,6 +15,11 @@ public class CC2DTriggerHelper : MonoBehaviour
 		_parentCharacterController = parentCharacterController;
 	}
 
+	public CharacterController2D getParentCharacterController()
+	{
+		return _parentCharacterController;
+	}
+
 
 	#region MonoBehavior
 
