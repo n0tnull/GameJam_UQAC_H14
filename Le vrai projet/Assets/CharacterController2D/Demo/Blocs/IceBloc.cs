@@ -14,18 +14,36 @@ public class IceBloc : MonoBehaviour {
 	}
 
 
-	void OnTriggerEnter2D(Collider2D collider)
+	void OnTriggerEnter2D(Collider2D other)
 	{
-		CharacterController2D character = collider.GetComponent<CC2DTriggerHelper>().getParentCharacterController();
-		if(character.collisionState.below)
+		Debug.Log(other.gameObject.name);
+		if(other.gameObject.name == "PlayerTriggerHelper")
 		{
-			character.GetComponent<PhysicsPlayerTester>().SendMessage("OnIceEnter");
+			if(other.GetComponent<CC2DTriggerHelper>().getParentCharacterController().collisionState.below)
+			{
+				Debug.Log("ok");
+				other.gameObject.SendMessage("OnIceEnter");
+			}
 		}
 	}
 
-	void OnTriggerExit2D(Collider2D collider)
+	void OnTriggerExit2D(Collider2D other)
 	{
+
 		CharacterController2D character = collider.GetComponent<CC2DTriggerHelper>().getParentCharacterController();
-		character.GetComponent<PhysicsPlayerTester>().SendMessage("OnIceExit");
+		if (!character.collisionState.below) 
+		{
+			character.GetComponent<PhysicsPlayerTester>().SendMessage("OnIceExit");	
+		}
+		if(other.gameObject.name == "PlayerTriggerHelper")
+		{
+			other.gameObject.SendMessage("OnIceExit");
+		}
+
+	}
+
+	void OnCollisionExit2D(Collision2D collider)
+	{
+
 	}
 }
