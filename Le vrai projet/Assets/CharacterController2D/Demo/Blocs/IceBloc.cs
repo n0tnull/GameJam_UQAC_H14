@@ -31,10 +31,10 @@ public class IceBloc : MonoBehaviour {
 	{
 
 		CharacterController2D character = other.GetComponent<CC2DTriggerHelper>().getParentCharacterController();
-		if (!character.collisionState.below) 
-		{
+//		if (!character.collisionState.below) 
+//		{
 			character.GetComponent<PhysicsPlayerTester>().SendMessage("OnIceExit");	
-		}
+//		}
 	}
 
 	void OnCollisionExit2D(Collision2D collider)

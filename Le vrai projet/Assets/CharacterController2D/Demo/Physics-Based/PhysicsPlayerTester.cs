@@ -122,6 +122,7 @@ public class PhysicsPlayerTester : MonoBehaviour
 
 	void OnIceExit()
 	{
+		Debug.Log ("IceExit");
 		onIce = false;
 	}
 
