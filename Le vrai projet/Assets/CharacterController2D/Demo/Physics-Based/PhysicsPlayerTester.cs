@@ -50,7 +50,11 @@ public class PhysicsPlayerTester : MonoBehaviour
 
 	void onControllerCollider( RaycastHit2D hit )
 	{
-
+		if (hit.transform.tag == "Enemy") 
+		{
+			Debug.Log ("nice");
+			Death();
+		}
 	}
 
 	void onTriggerEnterEvent( Collider2D col )
