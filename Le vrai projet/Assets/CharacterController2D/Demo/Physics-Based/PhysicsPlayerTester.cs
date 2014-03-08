@@ -11,6 +11,7 @@ public class PhysicsPlayerTester : MonoBehaviour
 	public float inAirDamping = 5f;
 	public float jumpHeight = 3f;
 	public bool dead = false;
+	public GUIText _lostUI;
 
 	[HideInInspector]
 	private float normalizedHorizontalSpeed = 0;
@@ -113,11 +114,6 @@ public class PhysicsPlayerTester : MonoBehaviour
 		{
 			direction = Input.GetAxis("HorizontalJoy");
 		}
-<<<<<<< HEAD
-		
-=======
-
->>>>>>> be76c3f924acee939bca69c504cbb4e78ae6bb87
 		if (direction > 0) { //AxisDown
 			_right = true;
 			_left = false;
@@ -136,17 +132,21 @@ public class PhysicsPlayerTester : MonoBehaviour
 
 	void OnIceEnter()
 	{
+		Debug.Log ("IceEnter");
 		onIce = true;
 	}
 
 	void OnIceExit()
 	{
+		Debug.Log ("IceExit");
 		onIce = true;
 	}
 
 	void Death()
 	{
+		Debug.Log ("Death");
 		dead = true;
+		_lostUI.text = "You Lost";
 	}
 
 	void FixedUpdate()
@@ -156,8 +156,13 @@ public class PhysicsPlayerTester : MonoBehaviour
 		
 		if( _controller.isGrounded )
 			_velocity.y = 0;
-		
-		if( _right )
+
+		if(dead)
+		{
+			if( _controller.isGrounded )
+				_animator.Play( Animator.StringToHash( "Death" ) );
+		}
+		else if( _right )
 		{
 				normalizedHorizontalSpeed = 1;
 
@@ -193,7 +198,7 @@ public class PhysicsPlayerTester : MonoBehaviour
 			groundDamping = 10;
 
 		// we can only jump whilst grounded
-		if( _controller.isGrounded && _up )
+		if( _controller.isGrounded && _up && !dead)
 		{
 			_velocity.y = Mathf.Sqrt( 2f * jumpHeight * -gravity );
 			_animator.Play( Animator.StringToHash( "Jump" ) );
