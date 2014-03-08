@@ -227,10 +227,13 @@ public class PhysicsPlayerTester : MonoBehaviour
 		if (isDeadly = go.name == "ElectricTriangle")
 			goto Dead;
 
-		if (isDeadly = go.name == "PicsBloc")
-			goto Dead;
+//		if (isDeadly = go.name == "PicsBloc")
+//			goto Dead;
+//
+//		if (isDeadly = go.name == "PicsTriangle")
+//			goto Dead;
 
-		if (isDeadly = go.name == "PicsTriangle")
+		if (isDeadly = go.name == "Void")
 			goto Dead;
 
 		Dead:
