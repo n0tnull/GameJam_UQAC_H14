@@ -39,13 +39,18 @@ public class FallingBloc : MonoBehaviour
 				shaking = false;
 				falling = true;
 				secondState = true;
+				Rigidbody2D rb;
+				rb = gameObject.AddComponent("Rigidbody2D") as Rigidbody2D;
+				rb.gravityScale = 1;
+				rb.fixedAngle = true;
 			}
 		}
 		if(falling)
 		{
-			Vector2 temp = transform.position;
+			/*Vector2 temp = transform.position;
 			temp.y = transform.position.y + -0.1f;
-			transform.position = temp;
+			transform.position = temp;*/
+
 		}
 	}
 
@@ -75,7 +80,6 @@ public class FallingBloc : MonoBehaviour
 		{
 			if(secondState)
 				falling = false;
-			Debug.Log ("TATA");
 		}
 	}
 }

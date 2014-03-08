@@ -12,4 +12,17 @@ public class Void : MonoBehaviour {
 	void Update () {
 	
 	}
+
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		if(other.tag == "Bloc")
+		{
+			Destroy(other.gameObject);
+		}
+	}
+
+	void OnCollision2D(Collision2D other)
+	{
+		Debug.Log ("COLLIDE");
+	}
 }
