@@ -35,7 +35,7 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
-    joyNum: 2
+    joyNum: 1
   - serializedVersion: 3
     m_Name: (P1) HorizontalJoy
     descriptiveName: 
@@ -51,7 +51,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 0
-    joyNum: 2
+    joyNum: 1
   - serializedVersion: 3
     m_Name: (P1) VerticalJoy
     descriptiveName: 
@@ -67,13 +67,13 @@ InputManager:
     invert: 1
     type: 2
     axis: 1
-    joyNum: 2
+    joyNum: 1
   - serializedVersion: 3
     m_Name: (P1) Jump
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: joystick 2 button 0
+    positiveButton: joystick 1 button 0
     altNegativeButton: 
     altPositiveButton: space
     gravity: 1000
@@ -83,7 +83,7 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
-    joyNum: 2
+    joyNum: 1
   - serializedVersion: 3
     m_Name: (P2) HorizontalJoy
     descriptiveName: 

@@ -20,7 +20,10 @@ public class JoystickCursor : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		
+		//transform.Translate (Input.GetAxis ("Horizontal")*moveSensitivity, Input.GetAxis ("Vertical")*moveSensitivity, 0);
 
+		transform.Translate (Input.GetAxis ("(P2) Mouse X")*moveSensitivity, Input.GetAxis ("(P2) Mouse Y")*moveSensitivity, 0);
 		transform.Translate (Input.GetAxis ("(P2) HorizontalJoy")*moveSensitivity, Input.GetAxis ("(P2) VerticalJoy")*moveSensitivity, 0);
 		objectCameraPosition = Camera.main.WorldToViewportPoint (transform.position);
 
@@ -59,6 +62,7 @@ public class JoystickCursor : MonoBehaviour {
 				grabObject ();
 		}
 
+	
 	}
 
 	void grabObject()

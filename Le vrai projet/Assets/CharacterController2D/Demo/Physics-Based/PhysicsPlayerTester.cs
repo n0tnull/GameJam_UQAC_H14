@@ -11,7 +11,6 @@ public class PhysicsPlayerTester : MonoBehaviour
 	public float inAirDamping = 5f;
 	public float jumpHeight = 3f;
 	public bool dead = false;
-	public GUIText _lostUI;
 
 	[HideInInspector]
 	private float normalizedHorizontalSpeed = 0;
@@ -42,7 +41,7 @@ public class PhysicsPlayerTester : MonoBehaviour
 		_controller.onControllerCollidedEvent += onControllerCollider;
 		_controller.onTriggerEnterEvent += onTriggerEnterEvent;
 		_controller.onTriggerExitEvent += onTriggerExitEvent;
-		_lostUI.enabled = false;
+
 	}
 
 
@@ -50,7 +49,11 @@ public class PhysicsPlayerTester : MonoBehaviour
 
 	void onControllerCollider( RaycastHit2D hit )
 	{
-
+		if (!dead){
+			if (isDeadly(hit.collider.gameObject)){
+				Death();
+			}
+		}
 	}
 
 	void onTriggerEnterEvent( Collider2D col )
@@ -117,22 +120,30 @@ public class PhysicsPlayerTester : MonoBehaviour
 
 	void OnIceEnter()
 	{
-		Debug.Log ("IceEnter");
 		onIce = true;
 	}
 
 	void OnIceExit()
 	{
-		Debug.Log ("IceExit");
 		onIce = false;
 	}
 
 	void Death()
 	{
-		Debug.Log ("Death");
+		//Debug.Log ("Death");
 		dead = true;
-		_lostUI.enabled = true;
-		_lostUI.text = "You Lost";
+		gameObject.GetComponent<CharacterDeath>().OnDeath();
+	}
+
+	void Disappear()
+	{
+		Death ();
+	}
+
+	public void Revive()
+	{
+		dead = false;
+		_animator.Play( Animator.StringToHash( "Idle" ) );
 	}
 
 	void FixedUpdate()
@@ -145,6 +156,8 @@ public class PhysicsPlayerTester : MonoBehaviour
 
 		if(dead)
 		{
+			normalizedHorizontalSpeed = 0;
+
 			if( _controller.isGrounded )
 				_animator.Play( Animator.StringToHash( "Death" ) );
 		}
@@ -202,6 +215,33 @@ public class PhysicsPlayerTester : MonoBehaviour
 
 		// reset input
 		_up = false;
+	}
+
+	bool isDeadly(GameObject go){
+		bool isDeadly = false;
+
+
+		// Apple SSL Style :D
+		if (isDeadly = go.tag == "Enemy")
+			goto Dead;
+		
+		if (isDeadly = go.name == "ElectricBloc")
+			goto Dead;
+
+		if (isDeadly = go.name == "ElectricTriangle")
+			goto Dead;
+
+//		if (isDeadly = go.name == "PicsBloc")
+//			goto Dead;
+//
+//		if (isDeadly = go.name == "PicsTriangle")
+//			goto Dead;
+
+		if (isDeadly = go.name == "Void")
+			goto Dead;
+
+		Dead:
+		return isDeadly;
 	}
 
 }

@@ -12,14 +12,4 @@ public class Void : MonoBehaviour {
 	void Update () {
 	
 	}
-
-	void OnTriggerEnter2D(Collider2D other)
-	{
-		Debug.Log ("OnDisappearCollision");
-		if(other.gameObject.name == "PlayerTriggerHelper")
-		{
-			CharacterController2D character = other.GetComponent<CC2DTriggerHelper>().getParentCharacterController();
-			character.GetComponent<PhysicsPlayerTester>().SendMessage("Disappear");
-		}
-	}
 }
