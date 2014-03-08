@@ -12,12 +12,14 @@ public class StartRace : MonoBehaviour {
 	void Start () {
 		Time.timeScale = 0;
 	}
+
+	public bool RaceStarted {get {return started;} }
 	
 	// Update is called once per frame
 	void Update () {
 		if(!started)
 		{
-			Debug.Log ("press spacebar to begin");
+			//Debug.Log ("press spacebar to begin");
 			if(Input.GetKeyDown (KeyCode.Space))
 			{
 				inTimer = true;
