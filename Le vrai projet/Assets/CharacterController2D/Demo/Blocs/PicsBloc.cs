@@ -15,15 +15,15 @@ public class PicsBloc : MonoBehaviour
 		
 	}
 
-	/*void OnCollisionEnter2D(Collision2D collider)
+	void OnTriggerEnter2D(Collider2D other)
 	{
-		if(collider.gameObject == GameObject.Find ("Player"))
+		if(other.gameObject == GameObject.Find ("Player"))
 		{
-			if(collider.transform.position.y - 0.98 <= transform.position.y)
+			CharacterController2D character = other.GetComponent<CC2DTriggerHelper>().getParentCharacterController();
+			if(character.collisionState.below)
 			{
-				collider.gameObject.SendMessage("Death");
-				Debug.Log ("DEATH");
+				character.GetComponent<PhysicsPlayerTester>().SendMessage("Death");
 			}
 		}
-	}*/
+	}
 }

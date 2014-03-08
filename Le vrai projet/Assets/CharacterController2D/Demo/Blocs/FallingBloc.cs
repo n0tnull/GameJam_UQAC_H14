@@ -49,11 +49,6 @@ public class FallingBloc : MonoBehaviour
 		}
 	}
 
-	public void Shake()
-	{
-		shaking = true;
-	}
-
 	/*void OnCollisionEnter2D(Collision2D collider)
 	{
 		if(secondState)
