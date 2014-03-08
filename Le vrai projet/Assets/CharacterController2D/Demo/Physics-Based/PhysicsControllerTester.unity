@@ -141,7 +141,7 @@ MonoBehaviour:
   inAirDamping: 5
   jumpHeight: 3
   dead: 0
-  _lostUI: {fileID: 994322896}
+  _lostUI: {fileID: 994322897}
 --- !u!114 &2896890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,7 +181,7 @@ MonoBehaviour:
   totalHorizontalRays: 8
   totalVerticalRays: 4
   createTriggerHelperGameObject: 1
-  triggerHelperBoxColliderScale: .949999988
+  triggerHelperBoxColliderScale: .999000013
   transform: {fileID: 0}
   boxCollider: {fileID: 0}
   rigidBody2D: {fileID: 0}
@@ -435,7 +435,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: a0a7a5c804385804fa6b968cefa85984, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bdcf53b80239f6a47b9c88b4fb6a899b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &322936953
 Transform:
@@ -786,7 +786,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: a0a7a5c804385804fa6b968cefa85984, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bdcf53b80239f6a47b9c88b4fb6a899b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &851147440
 Transform:
@@ -1922,7 +1922,7 @@ Prefab:
     - target: {fileID: 11400000, guid: 466d7be2eedc350478a91cb67cf45d76, type: 2}
       propertyPath: _lostUI
       value: 
-      objectReference: {fileID: 994322896}
+      objectReference: {fileID: 994322897}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 466d7be2eedc350478a91cb67cf45d76, type: 2}
   m_RootGameObject: {fileID: 2896886}
