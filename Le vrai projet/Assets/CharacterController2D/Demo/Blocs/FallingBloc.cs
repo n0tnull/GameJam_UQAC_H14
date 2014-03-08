@@ -72,8 +72,7 @@ public class FallingBloc : MonoBehaviour
 		{
 			if(collider.GetComponent<CC2DTriggerHelper>().getParentCharacterController().collisionState.below)
 			{
-				Debug.Log ("Par le dessus");
-				//shaking = true;
+				shaking = true;
 			}
 		}
 	}
