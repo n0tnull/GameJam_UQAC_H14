@@ -26,6 +26,10 @@ public class IceBloc : MonoBehaviour {
 	void OnTriggerExit2D(Collider2D collider)
 	{
 		CharacterController2D character = collider.GetComponent<CC2DTriggerHelper>().getParentCharacterController();
-		character.GetComponent<PhysicsPlayerTester>().SendMessage("OnIceExit");
+		if (!character.collisionState.below) 
+		{
+			character.GetComponent<PhysicsPlayerTester>().SendMessage("OnIceExit");	
+		}
+
 	}
 }
