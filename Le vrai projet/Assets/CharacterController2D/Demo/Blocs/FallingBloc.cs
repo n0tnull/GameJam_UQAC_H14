@@ -5,6 +5,7 @@ public class FallingBloc : MonoBehaviour
 {
 	bool shaking;
 	bool falling;
+	bool secondState;
 	float pos;
 	float increment;
 	int cpt;
@@ -15,6 +16,7 @@ public class FallingBloc : MonoBehaviour
 		increment = 0.1f;
 		shaking = false;
 		falling = false;
+		secondState = false;
 		cpt = 0;
 	}
 	
@@ -36,6 +38,7 @@ public class FallingBloc : MonoBehaviour
 			{
 				shaking = false;
 				falling = true;
+				secondState = true;
 			}
 		}
 		if(falling)
@@ -53,15 +56,25 @@ public class FallingBloc : MonoBehaviour
 
 	/*void OnCollisionEnter2D(Collision2D collider)
 	{
-		Debug.Log ("En collision");
-		if(collider.gameObject == GameObject.Find ("Player"))
+		if(secondState)
+			falling = false;
+	}
+
+	void OnCollisionExit2D(Collision2D collider)
+	{
+		if(secondState)
+			falling = true;
+	}*/
+
+	void OnTriggerEnter2D(Collider2D collider)
+	{
+		if(collider.name.Equals("PlayerTriggerHelper"))
 		{
-			Debug.Log ("En collision avec le joueur");
-			if(collider.transform.position.y - 0.98 <= transform.position.y)
+			if(collider.GetComponent<CC2DTriggerHelper>().getParentCharacterController().collisionState.below)
 			{
 				Debug.Log ("Par le dessus");
-				shaking = true;
+				//shaking = true;
 			}
 		}
-	}*/
+	}
 }

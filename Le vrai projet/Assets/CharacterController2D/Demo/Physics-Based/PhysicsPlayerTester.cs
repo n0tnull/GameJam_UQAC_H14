@@ -10,6 +10,7 @@ public class PhysicsPlayerTester : MonoBehaviour
 	public float groundDamping = 20f; // how fast do we change direction? higher means faster
 	public float inAirDamping = 5f;
 	public float jumpHeight = 3f;
+	public bool dead = false;
 
 	[HideInInspector]
 	private float normalizedHorizontalSpeed = 0;
@@ -105,8 +106,7 @@ public class PhysicsPlayerTester : MonoBehaviour
 		{
 			direction = Input.GetAxis("HorizontalJoy");
 		}
-
-		Debug.Log (Input.GetAxis("HorizontalJoy"));
+		
 		if (direction > 0) { //AxisDown
 			_right = true;
 			_left = false;
@@ -133,6 +133,10 @@ public class PhysicsPlayerTester : MonoBehaviour
 		onIce = true;
 	}
 
+	void Death()
+	{
+		dead = true;
+	}
 
 	void FixedUpdate()
 	{
