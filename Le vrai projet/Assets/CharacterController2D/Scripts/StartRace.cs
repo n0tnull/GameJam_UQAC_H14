@@ -7,7 +7,7 @@ public class StartRace : MonoBehaviour {
 	private bool inTimer = false;
 	private float starTimer = 4;
 	private float starTimerAcc = 0;
-	private int team = 1;
+	public int team = 1;
 	GameObject startPoint;
 	private GUIText _lostUI;
 
