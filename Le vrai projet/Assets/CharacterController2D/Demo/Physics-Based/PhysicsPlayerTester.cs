@@ -48,8 +48,15 @@ public class PhysicsPlayerTester : MonoBehaviour
 
 	void onControllerCollider( RaycastHit2D hit )
 	{
-		// logs any collider hits if uncommented. it gets noisy so it is commented out for the demo
-		//Debug.Log( "flags: " + _controller.collisionState + ", hit.normal: " + hit.normal );
+		if(hit.transform.name == "IceBloc")
+		{
+			onIce = true;
+		}
+	}
+
+	void OnCollisionEnter2D(Collision2D collider)
+	{
+
 	}
 
 
@@ -106,7 +113,11 @@ public class PhysicsPlayerTester : MonoBehaviour
 		{
 			direction = Input.GetAxis("HorizontalJoy");
 		}
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> be76c3f924acee939bca69c504cbb4e78ae6bb87
 		if (direction > 0) { //AxisDown
 			_right = true;
 			_left = false;
