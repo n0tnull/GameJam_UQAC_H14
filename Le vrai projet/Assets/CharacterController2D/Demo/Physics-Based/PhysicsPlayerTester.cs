@@ -113,11 +113,7 @@ public class PhysicsPlayerTester : MonoBehaviour
 		{
 			direction = Input.GetAxis("HorizontalJoy");
 		}
-<<<<<<< HEAD
-		
-=======
 
->>>>>>> be76c3f924acee939bca69c504cbb4e78ae6bb87
 		if (direction > 0) { //AxisDown
 			_right = true;
 			_left = false;
