@@ -7,7 +7,7 @@ public class StartRace : MonoBehaviour {
 	private bool inTimer = false;
 	private float starTimer = 4;
 	private float starTimerAcc = 0;
-	private int team = 1;
+	public int team = 1;
 	GameObject startPoint;
 	private GUIText _lostUI;
 	private float playerTimer = 0;
@@ -22,12 +22,14 @@ public class StartRace : MonoBehaviour {
 	}
 
 	public bool RaceStarted {get {return started;} }
+	public float TimeBeforeStart {get {return starTimer-starTimerAcc+1;}}
+	public bool TimerVisible {get {return inTimer;}}
 	
 	// Update is called once per frame
 	void Update () {
 		if(!started)
 		{
-			if(Input.GetKeyDown (KeyCode.Space))
+			if(Input.GetKeyDown (KeyCode.Space) || Input.GetButtonDown("(P1) Jump"))
 			{
 				inTimer = true;
 				Time.timeScale = 1;
