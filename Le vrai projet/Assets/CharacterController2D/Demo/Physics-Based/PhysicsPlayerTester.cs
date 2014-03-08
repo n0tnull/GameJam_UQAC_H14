@@ -131,6 +131,13 @@ public class PhysicsPlayerTester : MonoBehaviour
 		dead = true;
 		_lostUI.enabled = true;
 		_lostUI.text = "You Lost";
+
+
+	}
+
+	void Disappear()
+	{
+		Death ();
 	}
 
 	void FixedUpdate()
@@ -143,6 +150,8 @@ public class PhysicsPlayerTester : MonoBehaviour
 
 		if(dead)
 		{
+			normalizedHorizontalSpeed = 0;
+
 			if( _controller.isGrounded )
 				_animator.Play( Animator.StringToHash( "Death" ) );
 		}
