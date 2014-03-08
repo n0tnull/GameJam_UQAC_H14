@@ -8,6 +8,7 @@ public abstract class Enemy : MonoBehaviour {
 	// Use this for initialization
 	protected virtual void Start () {
 		gameObject.tag = "Enemy";
+		rigidbody2D.fixedAngle = true;
 	}
 	
 	// Update is called once per frame
