@@ -1660,7 +1660,7 @@ GameObject:
   - 61: {fileID: 1524429125}
   - 212: {fileID: 1524429126}
   m_Layer: 10
-  m_Name: Trigger
+  m_Name: Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
