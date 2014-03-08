@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class StartRace : MonoBehaviour {
 
@@ -11,18 +12,39 @@ public class StartRace : MonoBehaviour {
 	GameObject startPoint;
 	private float playerTimer = 0;
 	private bool playerTimerStarted = false;
+	private List<Bloc> blocs;
 
 	// Use this for initialization
 	void Start () 
 	{
 		startPoint = GameObject.Find ("Start");
 		Time.timeScale = 0;
+		InitialiseBlocs();
 	}
 
 	public bool RaceStarted {get {return started;} }
 	public float TimeBeforeStart {get {return starTimer-starTimerAcc+1;}}
 	public bool TimerVisible {get {return inTimer;}}
 	public float GameTimer { get { return playerTimer;} }
+
+	void InitialiseBlocs()
+	{
+		blocs = new List<Bloc>();
+		foreach(GameObject objet in GameObject.FindGameObjectsWithTag("Bloc"))
+		{
+			Bloc bloc = objet.GetComponent<Bloc>();
+			bloc.SetInitialCoordinates(bloc.transform.position.x,bloc.transform.position.y);
+			blocs.Add (bloc);
+		}
+	}
+
+	void RestartLevel()
+	{
+		foreach(Bloc bloc in blocs)
+		{
+			bloc.Restart();
+		}
+	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -90,6 +112,7 @@ public class StartRace : MonoBehaviour {
 			temp.y = startPoint.transform.position.y;
 			transform.position = temp;
 			gameObject.GetComponent<PhysicsPlayerTester>().Revive();
+			RestartLevel();
 			RestartTimer();
 		}
 		else if(team == 2)

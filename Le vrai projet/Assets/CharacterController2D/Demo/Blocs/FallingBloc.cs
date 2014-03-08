@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FallingBloc : MonoBehaviour 
+public class FallingBloc : Bloc
 {
 	bool shaking;
 	bool falling;
@@ -39,19 +39,27 @@ public class FallingBloc : MonoBehaviour
 				shaking = false;
 				falling = true;
 				secondState = true;
-				Rigidbody2D rb;
-				rb = gameObject.AddComponent("Rigidbody2D") as Rigidbody2D;
-				rb.gravityScale = 1;
-				rb.fixedAngle = true;
+				//Rigidbody2D rb;
+				//rb = gameObject.AddComponent("Rigidbody2D") as Rigidbody2D;
+				//rb.gravityScale = 1;
+				//rb.fixedAngle = true;
+				rigidbody2D.isKinematic = false;
 			}
 		}
-		if(falling)
+		/*if(falling)
 		{
-			/*Vector2 temp = transform.position;
+			Vector2 temp = transform.position;
 			temp.y = transform.position.y + -0.1f;
-			transform.position = temp;*/
+			transform.position = temp;
 
-		}
+		}*/
+	}
+
+	public override void Restart()
+	{
+		base.Restart();
+		rigidbody2D.isKinematic = true;
+		Start();
 	}
 
 	/*void OnCollisionEnter2D(Collision2D collider)

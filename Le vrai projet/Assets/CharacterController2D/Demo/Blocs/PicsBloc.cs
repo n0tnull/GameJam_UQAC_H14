@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PicsBloc : MonoBehaviour 
+public class PicsBloc : Bloc 
 {
 	// Use this for initialization
 	void Start () 

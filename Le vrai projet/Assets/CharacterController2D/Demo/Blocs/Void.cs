@@ -17,7 +17,7 @@ public class Void : MonoBehaviour {
 	{
 		if(other.tag == "Bloc")
 		{
-			Destroy(other.gameObject);
+			other.gameObject.SetActive(false);
 		}
 	}
 

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ElectricBloc : MonoBehaviour {
+public class ElectricBloc : Bloc {
 
 	// Use this for initialization
 	void Start () {
