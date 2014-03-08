@@ -15,7 +15,7 @@ public class ElectricBloc : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if(other.gameObject == GameObject.Find ("Player"))
+		if(other.name.Equals("PlayerTriggerHelper"))
 		{
 			CharacterController2D character = other.GetComponent<CC2DTriggerHelper>().getParentCharacterController();
 			character.GetComponent<PhysicsPlayerTester>().SendMessage("Death");
