@@ -24,6 +24,8 @@ public class PhysicsPlayerTester : MonoBehaviour
 	private bool _left;
 	private bool _up;
 
+	private bool onIce = false;
+
 	private bool barPressed = false;		//Checks if an axis is in motion
 
 
@@ -67,16 +69,29 @@ public class PhysicsPlayerTester : MonoBehaviour
 	// the Update loop only gathers input. Actual movement is handled in FixedUpdate because we are using the Physics system for movement
 	void Update()
 	{
+		movementChecks();
+
+		if (Input.GetButton ("Fire1")) {
+			onIce = true;
+		} else 
+		{
+			onIce = false;
+		}
+		  
+	}
+
+	void movementChecks()
+	{
 		// a minor bit of trickery here. FixedUpdate sets _up to false so to ensure we never miss any jump presses we leave _up
 		// set to true if it was true the previous frame
 		_up = _up || Input.GetButtonDown("Jump" );
-		var foo = Input.GetAxis("Horizontal");
-
-		if (foo > 0) { //AxisDown
+		var direction = Input.GetAxis("Horizontal");
+		
+		if (direction > 0) { //AxisDown
 			_right = true;
 			_left = false;
 			barPressed = true;
-		} else if (foo < 0) { //AxisUp
+		} else if (direction < 0) { //AxisUp
 			_left = true;
 			_right = false;
 			barPressed = true;
@@ -99,7 +114,8 @@ public class PhysicsPlayerTester : MonoBehaviour
 		
 		if( _right )
 		{
-			normalizedHorizontalSpeed = 1;
+				normalizedHorizontalSpeed = 1;
+
 			if( transform.localScale.x < 0f )
 				transform.localScale = new Vector3( -transform.localScale.x, transform.localScale.y, transform.localScale.z );
 			
@@ -109,6 +125,7 @@ public class PhysicsPlayerTester : MonoBehaviour
 		else if( _left )
 		{
 			normalizedHorizontalSpeed = -1;
+
 			if( transform.localScale.x > 0f )
 				transform.localScale = new Vector3( -transform.localScale.x, transform.localScale.y, transform.localScale.z );
 			
@@ -123,7 +140,13 @@ public class PhysicsPlayerTester : MonoBehaviour
 				_animator.Play( Animator.StringToHash( "Idle" ) );
 		}
 		
-		
+		if(onIce)
+		{
+			groundDamping = 2;
+		}
+		else
+			groundDamping = 10;
+
 		// we can only jump whilst grounded
 		if( _controller.isGrounded && _up )
 		{

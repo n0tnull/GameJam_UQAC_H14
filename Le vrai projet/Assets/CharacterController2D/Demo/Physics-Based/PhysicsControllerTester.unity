@@ -1492,6 +1492,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 466d7be2eedc350478a91cb67cf45d76, type: 2}
+      propertyPath: groundDamping
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 466d7be2eedc350478a91cb67cf45d76, type: 2}
   m_RootGameObject: {fileID: 2896886}
