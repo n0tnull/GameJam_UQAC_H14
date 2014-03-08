@@ -10,6 +10,8 @@ public class StartRace : MonoBehaviour {
 	private int team = 1;
 	GameObject startPoint;
 	private GUIText _lostUI;
+	private float playerTimer = 0;
+	private bool playerTimerStarted = false;
 
 	// Use this for initialization
 	void Start () 
@@ -49,14 +51,20 @@ public class StartRace : MonoBehaviour {
 					gameObject.GetComponent<CharacterController2D>().enabled = true;
 					gameObject.GetComponent<PhysicsPlayerTester>().enabled = true;
 					gameObject.rigidbody2D.isKinematic= true;
+					playerTimerStarted = true;
 
 				}
 			}
+		}
+		if(playerTimerStarted)
+		{
+			playerTimer += Time.deltaTime;
 		}
 	}
 
 	void RestartTimer()
 	{
+		playerTimer = 0;
 		Time.timeScale = 0;
 		starTimerAcc = 0;
 		inTimer = false;
@@ -64,6 +72,11 @@ public class StartRace : MonoBehaviour {
 		gameObject.GetComponent<CharacterController2D>().enabled = false;
 		gameObject.GetComponent<PhysicsPlayerTester>().enabled = false;
 		gameObject.rigidbody2D.isKinematic= false;
+	}
+
+	public void StopTimer()
+	{
+		playerTimerStarted = false;
 	}
 
 	public void switchTeam()
@@ -83,5 +96,10 @@ public class StartRace : MonoBehaviour {
 			_lostUI.enabled = true;
 			_lostUI.text = "La partie est terminé!";
 		}
+	}
+
+	void OnGUI()
+	{
+		GUI.Label(new Rect(10, 10, 100, 20), ""+ playerTimer.ToString("F2"));
 	}
 }

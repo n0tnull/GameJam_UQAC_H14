@@ -130,7 +130,6 @@ public class PhysicsPlayerTester : MonoBehaviour
 
 	void Death()
 	{
-		//Debug.Log ("Death");
 		dead = true;
 		gameObject.GetComponent<CharacterDeath>().OnDeath();
 	}

@@ -16,6 +16,7 @@ public class CharacterDeath : MonoBehaviour
 
 	public void OnDeath()
 	{
+		gameObject.GetComponent<StartRace>().StopTimer();
 		timerStarted = true;
 		_lostUI.enabled = true;
 	}
