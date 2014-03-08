@@ -9,14 +9,12 @@ public class StartRace : MonoBehaviour {
 	private float starTimerAcc = 0;
 	public int team = 1;
 	GameObject startPoint;
-	private GUIText _lostUI;
 	private float playerTimer = 0;
 	private bool playerTimerStarted = false;
 
 	// Use this for initialization
 	void Start () 
 	{
-		_lostUI = GameObject.Find ("LostUI").GetComponent<GUIText>();
 		startPoint = GameObject.Find ("Start");
 		Time.timeScale = 0;
 	}

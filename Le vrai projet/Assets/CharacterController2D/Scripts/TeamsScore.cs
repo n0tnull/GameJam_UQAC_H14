@@ -13,7 +13,6 @@ public class TeamsScore : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		score[gameObject.GetComponent<StartRace>().team-1] = transform.position.x - begin.x;
-		Debug.Log (score [gameObject.GetComponent<StartRace> ().team - 1]);
 	}
 
 	float getScore(int team)

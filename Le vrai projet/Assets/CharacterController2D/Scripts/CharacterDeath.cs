@@ -6,7 +6,6 @@ public class CharacterDeath : MonoBehaviour
 	private float starTimer = 0;
 	private float starTimerAcc = 4;
 	private bool timerStarted = false;
-	private GUIText _lostUI;
 	public float timeSinceDeath {get {return starTimerAcc;}}
 
 	// Use this for initialization
