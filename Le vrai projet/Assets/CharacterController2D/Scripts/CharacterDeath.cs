@@ -36,7 +36,7 @@ public class CharacterDeath : MonoBehaviour
 				timerStarted = false;
 				_lostUI.text = "";
 				_lostUI.enabled = false;
-				Debug.Log ("FIN");
+				gameObject.GetComponent<StartRace>().switchTeam();
 			}
 		}
 	}
