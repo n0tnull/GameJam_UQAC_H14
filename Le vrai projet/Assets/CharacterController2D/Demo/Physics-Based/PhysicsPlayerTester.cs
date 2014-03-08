@@ -11,7 +11,6 @@ public class PhysicsPlayerTester : MonoBehaviour
 	public float inAirDamping = 5f;
 	public float jumpHeight = 3f;
 	public bool dead = false;
-	public GUIText _lostUI;
 
 	[HideInInspector]
 	private float normalizedHorizontalSpeed = 0;
@@ -42,7 +41,7 @@ public class PhysicsPlayerTester : MonoBehaviour
 		_controller.onControllerCollidedEvent += onControllerCollider;
 		_controller.onTriggerEnterEvent += onTriggerEnterEvent;
 		_controller.onTriggerExitEvent += onTriggerExitEvent;
-		_lostUI.enabled = false;
+
 	}
 
 
@@ -132,15 +131,18 @@ public class PhysicsPlayerTester : MonoBehaviour
 	{
 		//Debug.Log ("Death");
 		dead = true;
-		_lostUI.enabled = true;
-		_lostUI.text = "You Lost";
-
-
+		gameObject.GetComponent<CharacterDeath>().OnDeath();
 	}
 
 	void Disappear()
 	{
 		Death ();
+	}
+
+	public void Revive()
+	{
+		dead = false;
+		_animator.Play( Animator.StringToHash( "Idle" ) );
 	}
 
 	void FixedUpdate()
