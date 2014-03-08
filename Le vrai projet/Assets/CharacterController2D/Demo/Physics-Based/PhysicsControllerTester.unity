@@ -156,7 +156,7 @@ MonoBehaviour:
   skinWidth: .0199999996
   platformMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 512
   oneWayPlatformMask:
     serializedVersion: 2
     m_Bits: 512
@@ -178,7 +178,7 @@ MonoBehaviour:
     m_PostInfinity: 2
   totalHorizontalRays: 8
   totalVerticalRays: 4
-  createTriggerHelperGameObject: 0
+  createTriggerHelperGameObject: 1
   triggerHelperBoxColliderScale: .949999988
   transform: {fileID: 0}
   boxCollider: {fileID: 0}
@@ -244,7 +244,7 @@ GameObject:
   - 33: {fileID: 66580287}
   - 23: {fileID: 66580286}
   - 61: {fileID: 66580285}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HighPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -312,7 +312,7 @@ GameObject:
   - 33: {fileID: 70261646}
   - 23: {fileID: 70261645}
   - 61: {fileID: 70261644}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HighPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -449,7 +449,7 @@ GameObject:
   - 33: {fileID: 698880136}
   - 23: {fileID: 698880135}
   - 61: {fileID: 698880134}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ramp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -517,7 +517,7 @@ GameObject:
   - 33: {fileID: 827843719}
   - 23: {fileID: 827843718}
   - 61: {fileID: 827843717}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HighPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -574,6 +574,83 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 827843715}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &832784485
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: e1e8452efd6789f45a1224ba0895e918, type: 2}
+  m_PrefabInternal: {fileID: 1373789040}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 832784489}
+  - 212: {fileID: 832784488}
+  - 61: {fileID: 832784487}
+  - 114: {fileID: 832784486}
+  m_Layer: 9
+  m_Name: IceBloc
+  m_TagString: Bloc
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &832784486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: e1e8452efd6789f45a1224ba0895e918,
+    type: 2}
+  m_PrefabInternal: {fileID: 1373789040}
+  m_GameObject: {fileID: 832784485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95cb0ae79236a924b84aa5b274102be4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &832784487
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6100000, guid: e1e8452efd6789f45a1224ba0895e918,
+    type: 2}
+  m_PrefabInternal: {fileID: 1373789040}
+  m_GameObject: {fileID: 832784485}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .959999979, y: .959999979}
+  m_Center: {x: 0, y: 0}
+--- !u!212 &832784488
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 21200000, guid: e1e8452efd6789f45a1224ba0895e918,
+    type: 2}
+  m_PrefabInternal: {fileID: 1373789040}
+  m_GameObject: {fileID: 832784485}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+  m_Sprite: {fileID: 21300000, guid: fd66970174b9fdf41bf048684938e9e5, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &832784489
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: e1e8452efd6789f45a1224ba0895e918, type: 2}
+  m_PrefabInternal: {fileID: 1373789040}
+  m_GameObject: {fileID: 832784485}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.98557472, y: -2.21010041, z: 0}
+  m_LocalScale: {x: 10, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &845843527
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,7 +731,7 @@ GameObject:
   - 33: {fileID: 862711369}
   - 23: {fileID: 862711368}
   - 61: {fileID: 862711367}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HighPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -722,7 +799,7 @@ GameObject:
   - 33: {fileID: 940824953}
   - 23: {fileID: 940824952}
   - 61: {fileID: 940824951}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ramp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -790,7 +867,7 @@ GameObject:
   - 33: {fileID: 943795326}
   - 23: {fileID: 943795325}
   - 61: {fileID: 943795324}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -927,7 +1004,7 @@ GameObject:
   - 33: {fileID: 1059963948}
   - 23: {fileID: 1059963947}
   - 61: {fileID: 1059963946}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HighPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1092,7 +1169,7 @@ GameObject:
   - 33: {fileID: 1204677530}
   - 23: {fileID: 1204677529}
   - 61: {fileID: 1204677528}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ramp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1149,6 +1226,58 @@ Transform:
   m_LocalScale: {x: 3.99997091, y: .446249545, z: 1}
   m_Children: []
   m_Father: {fileID: 1965188133}
+--- !u!1001 &1373789040
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: e1e8452efd6789f45a1224ba0895e918, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -2.98557472
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: e1e8452efd6789f45a1224ba0895e918, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -2.21010041
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: e1e8452efd6789f45a1224ba0895e918, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: e1e8452efd6789f45a1224ba0895e918, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: e1e8452efd6789f45a1224ba0895e918, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: e1e8452efd6789f45a1224ba0895e918, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: e1e8452efd6789f45a1224ba0895e918, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: e1e8452efd6789f45a1224ba0895e918, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6100000, guid: e1e8452efd6789f45a1224ba0895e918, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e1e8452efd6789f45a1224ba0895e918, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: e1e8452efd6789f45a1224ba0895e918, type: 2}
+  m_RootGameObject: {fileID: 832784485}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &1420243189
 GameObject:
   m_ObjectHideFlags: 0
@@ -1291,7 +1420,7 @@ GameObject:
   - 33: {fileID: 1728055387}
   - 23: {fileID: 1728055386}
   - 61: {fileID: 1728055385}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LowPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1359,7 +1488,7 @@ GameObject:
   - 33: {fileID: 1892329893}
   - 23: {fileID: 1892329892}
   - 61: {fileID: 1892329891}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ramp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1424,7 +1553,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1965188133}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1495,6 +1624,18 @@ Prefab:
     - target: {fileID: 11400000, guid: 466d7be2eedc350478a91cb67cf45d76, type: 2}
       propertyPath: groundDamping
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6100000, guid: 466d7be2eedc350478a91cb67cf45d76, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 466d7be2eedc350478a91cb67cf45d76, type: 2}
+      propertyPath: platformMask.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 466d7be2eedc350478a91cb67cf45d76, type: 2}
+      propertyPath: createTriggerHelperGameObject
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 466d7be2eedc350478a91cb67cf45d76, type: 2}
