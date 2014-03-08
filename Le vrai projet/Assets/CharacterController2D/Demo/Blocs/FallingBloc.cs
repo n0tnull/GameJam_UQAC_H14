@@ -71,5 +71,11 @@ public class FallingBloc : MonoBehaviour
 					shaking = true;
 			}
 		}
+		else
+		{
+			if(secondState)
+				falling = false;
+			Debug.Log ("TATA");
+		}
 	}
 }

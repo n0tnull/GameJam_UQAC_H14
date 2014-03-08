@@ -133,6 +133,12 @@ public class PhysicsPlayerTester : MonoBehaviour
 		_lostUI.text = "You Lost";
 	}
 
+	void Disappear()
+	{
+		Debug.Log ("Disappear");
+		Death ();
+	}
+
 	void FixedUpdate()
 	{
 		// grab our current _velocity to use as a base for all calculations
@@ -143,6 +149,7 @@ public class PhysicsPlayerTester : MonoBehaviour
 
 		if(dead)
 		{
+			normalizedHorizontalSpeed = 0;
 			if( _controller.isGrounded )
 				_animator.Play( Animator.StringToHash( "Death" ) );
 		}
