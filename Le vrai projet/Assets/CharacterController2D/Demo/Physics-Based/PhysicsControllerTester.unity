@@ -844,7 +844,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSensitivity: .300000012
-  spawnableObject: {fileID: 0}
+  spawnableObjects:
+  - {fileID: 100000, guid: 4b186ee7034571845802fe4877881736, type: 2}
 --- !u!212 &809616643
 SpriteRenderer:
   m_ObjectHideFlags: 0
