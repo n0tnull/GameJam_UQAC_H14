@@ -5,13 +5,16 @@ public class JoystickCursor : MonoBehaviour {
 
 	public float moveSensitivity = 1.0f;
 	public GameObject spawnableObject;
+
 	private GameObject heldObject;
-	private Vector3 objectOldPosition;
+	private Vector3 objectCameraPosition;
 
 	// Use this for initialization
 	void Start () {
 
 		//Screen.lockCursor = true;
+
+
 	
 	}
 	
@@ -19,8 +22,27 @@ public class JoystickCursor : MonoBehaviour {
 	void Update () {
 
 		transform.Translate (Input.GetAxis ("(P2) HorizontalJoy")*moveSensitivity, Input.GetAxis ("(P2) VerticalJoy")*moveSensitivity, 0);
+		objectCameraPosition = Camera.main.WorldToViewportPoint (transform.position);
 
-		//transform.Translate (Input.GetAxis ("Mouse X")*moveSensitivity, Input.GetAxis ("Mouse Y")*moveSensitivity, 0);
+		if (objectCameraPosition.x < 0)
+			transform.Translate (1, 0, 0);
+
+		if (objectCameraPosition.x > 1)
+			transform.Translate (-1, 0, 0);
+
+		if (objectCameraPosition.y < 0)
+			transform.Translate (0, 1, 0);
+		
+		if (objectCameraPosition.y > 1)
+			transform.Translate (0, -1, 0);
+
+
+		Debug.Log ("xMin = " + Camera.main.pixelRect.xMin
+		       + ", xMax = " + Camera.main.pixelRect.xMax
+		       + ", yMin = " + Camera.main.pixelRect.yMin
+		       + ", yMax = " + Camera.main.pixelRect.yMax);
+
+		transform.Translate (Input.GetAxis ("(P2) Mouse X")*moveSensitivity, Input.GetAxis ("(P2) Mouse Y")*moveSensitivity, 0);
 
 		if (heldObject != null)
 		{
@@ -29,7 +51,7 @@ public class JoystickCursor : MonoBehaviour {
 			                                             0);
 		}
 
-		if (Input.GetButtonDown ("(P2) GrabReleaseObject")/* || Input.GetMouseButtonDown(0)*/)
+		if (Input.GetButtonDown ("(P2) GrabReleaseObject") || Input.GetMouseButtonDown(0))
 		{
 			if (heldObject)
 				releaseObject ();
