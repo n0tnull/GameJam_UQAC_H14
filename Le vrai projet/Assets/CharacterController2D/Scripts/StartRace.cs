@@ -22,6 +22,7 @@ public class StartRace : MonoBehaviour {
 	public bool RaceStarted {get {return started;} }
 	public float TimeBeforeStart {get {return starTimer-starTimerAcc+1;}}
 	public bool TimerVisible {get {return inTimer;}}
+	public float GameTimer { get { return playerTimer;} }
 	
 	// Update is called once per frame
 	void Update () {
@@ -96,8 +97,13 @@ public class StartRace : MonoBehaviour {
 		}
 	}
 
-	void OnGUI()
+	public int GetTeam()
+	{
+		return team;
+	}
+
+	/*void OnGUI()
 	{
 		GUI.Label(new Rect(10, 10, 100, 20), ""+ playerTimer.ToString("F2"));
-	}
+	}*/
 }
