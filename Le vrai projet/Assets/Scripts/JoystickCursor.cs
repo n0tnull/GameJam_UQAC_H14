@@ -20,7 +20,7 @@ public class JoystickCursor : MonoBehaviour {
 		
 		//transform.Translate (Input.GetAxis ("Horizontal")*moveSensitivity, Input.GetAxis ("Vertical")*moveSensitivity, 0);
 
-		transform.Translate (Input.GetAxis ("Mouse X")*moveSensitivity, Input.GetAxis ("Mouse Y")*moveSensitivity, 0);
+		transform.Translate (Input.GetAxis ("(P2) Mouse X")*moveSensitivity, Input.GetAxis ("(P2) Mouse Y")*moveSensitivity, 0);
 		transform.Translate (Input.GetAxis ("(P2) HorizontalJoy")*moveSensitivity, Input.GetAxis ("(P2) VerticalJoy")*moveSensitivity, 0);
 
 		//transform.Translate (Input.GetAxis ("Mouse X")*moveSensitivity, Input.GetAxis ("Mouse Y")*moveSensitivity, 0);
@@ -39,9 +39,7 @@ public class JoystickCursor : MonoBehaviour {
 			else
 				grabObject ();
 		}
-		
-		if (Input.GetButtonDown ("Fire3") || Input.GetMouseButtonDown(1))
-			Debug.Log ("Nice, t'as pesé sur X.");
+
 	
 	}
 
