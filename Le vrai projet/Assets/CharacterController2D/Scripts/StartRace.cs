@@ -22,6 +22,8 @@ public class StartRace : MonoBehaviour {
 	}
 
 	public bool RaceStarted {get {return started;} }
+	public float TimeBeforeStart {get {return starTimer-starTimerAcc+1;}}
+	public bool TimerVisible {get {return inTimer;}}
 	
 	// Update is called once per frame
 	void Update () {

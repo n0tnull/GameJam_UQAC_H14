@@ -23,9 +23,13 @@ public class TextDisplayScript : MonoBehaviour {
 	}
 
 	void OnGUI(){
-		if(!race.RaceStarted)
+		if(!race.RaceStarted && !race.TimerVisible)
 		{
 			GUI.Label(new Rect(Screen.width/2-100,Screen.height/2-75,300,100), "Appuyer sur Espace pour demarrer");
+		}
+
+		if (race.TimeBeforeStart > 0 && race.TimerVisible){
+			GUI.Label(new Rect(Screen.width/2-leftOffset,Screen.height/2-heightOffset,300,100), "" + (int) race.TimeBeforeStart);
 		}
 
 		if(playerPhysics.dead){
