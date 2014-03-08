@@ -116,6 +116,27 @@ public class PhysicsPlayerTester : MonoBehaviour
 			_right = false;
 			barPressed = false;
 		}
+
+		//check de bloc de glace
+		RaycastHit2D hit;
+		Vector2 source = new Vector2 (renderer.bounds.center.x, renderer.bounds.center.y - renderer.bounds.extents.y);
+		Vector2 dest = -Vector2.up;
+
+		Debug.DrawRay (source, dest, Color.green);
+
+		hit = Physics2D.Raycast (source, dest, 1);
+
+		if(null != hit && null != hit.collider)
+		{
+			if(hit.collider.gameObject.name =="IceBloc" || hit.collider.gameObject.name =="IceTriangle" )
+			{
+				onIce = true;
+			}
+			else
+				onIce = false;
+		}
+		else
+			onIce = false;
 	}
 
 	void OnIceEnter()
