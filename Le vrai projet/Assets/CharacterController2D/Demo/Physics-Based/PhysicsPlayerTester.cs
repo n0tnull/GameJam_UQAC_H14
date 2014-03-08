@@ -50,7 +50,9 @@ public class PhysicsPlayerTester : MonoBehaviour
 
 	void onControllerCollider( RaycastHit2D hit )
 	{
-
+		if (isDeadly(hit.collider.gameObject)){
+			Death();
+		}
 	}
 
 	void onTriggerEnterEvent( Collider2D col )
@@ -127,7 +129,7 @@ public class PhysicsPlayerTester : MonoBehaviour
 
 	void Death()
 	{
-		Debug.Log ("Death");
+		//Debug.Log ("Death");
 		dead = true;
 		_lostUI.enabled = true;
 		_lostUI.text = "You Lost";
@@ -209,6 +211,30 @@ public class PhysicsPlayerTester : MonoBehaviour
 
 		// reset input
 		_up = false;
+	}
+
+	bool isDeadly(GameObject go){
+		bool isDeadly = false;
+
+
+		// Apple SSL Style :D
+		if (isDeadly = go.tag == "Enemy")
+			goto Dead;
+		
+		if (isDeadly = go.name == "ElectricBloc")
+			goto Dead;
+
+		if (isDeadly = go.name == "ElectricTriangle")
+			goto Dead;
+
+		if (isDeadly = go.name == "PicsBloc")
+			goto Dead;
+
+		if (isDeadly = go.name == "PicsTriangle")
+			goto Dead;
+
+		Dead:
+		return isDeadly;
 	}
 
 }

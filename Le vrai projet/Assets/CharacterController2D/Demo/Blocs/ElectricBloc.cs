@@ -13,13 +13,13 @@ public class ElectricBloc : MonoBehaviour {
 	
 	}
 
-	void OnTriggerEnter2D(Collider2D other)
-	{
-		Debug.Log(other.gameObject.name);
-		if(other.gameObject.name == "PlayerTriggerHelper")
-		{
-			CharacterController2D character = other.GetComponent<CC2DTriggerHelper>().getParentCharacterController();
-			character.GetComponent<PhysicsPlayerTester>().SendMessage("Death");
-		}
-	}
+//	void OnTriggerEnter2D(Collider2D other)
+//	{
+//		Debug.Log(other.gameObject.name);
+//		if(other.gameObject.name == "PlayerTriggerHelper")
+//		{
+//			CharacterController2D character = other.GetComponent<CC2DTriggerHelper>().getParentCharacterController();
+//			character.GetComponent<PhysicsPlayerTester>().SendMessage("Death");
+//		}
+//	}
 }
