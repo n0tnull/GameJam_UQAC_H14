@@ -38,12 +38,7 @@ public class JoystickCursor : MonoBehaviour {
 		
 		if (objectCameraPosition.y > 1)
 			transform.Translate (0, -1, 0);
-
-
-		Debug.Log ("xMin = " + Camera.main.pixelRect.xMin
-		       + ", xMax = " + Camera.main.pixelRect.xMax
-		       + ", yMin = " + Camera.main.pixelRect.yMin
-		       + ", yMax = " + Camera.main.pixelRect.yMax);
+		
 
 		transform.Translate (Input.GetAxis ("(P2) Mouse X")*moveSensitivity, Input.GetAxis ("(P2) Mouse Y")*moveSensitivity, 0);
 

@@ -17,10 +17,14 @@ public class PicsBloc : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if(other.name.Equals("PlayerTriggerHelper"))
+		if(other.gameObject.name == "PlayerTriggerHelper")
 		{
 			CharacterController2D character = other.GetComponent<CC2DTriggerHelper>().getParentCharacterController();
-			if(character.collisionState.below)
+			
+			Vector3 left = new Vector3 (character.renderer.bounds.center.x - character.renderer.bounds.extents.x, character.renderer.bounds.center.y - character.renderer.bounds.extents.y);
+			Vector3 right = new Vector3 (character.renderer.bounds.center.x + character.renderer.bounds.extents.x, character.renderer.bounds.center.y - character.renderer.bounds.extents.y);
+			
+			if (character.collisionState.below && (renderer.bounds.Contains(left) || renderer.bounds.Contains(right))) 
 			{
 				character.GetComponent<PhysicsPlayerTester>().SendMessage("Death");
 			}
