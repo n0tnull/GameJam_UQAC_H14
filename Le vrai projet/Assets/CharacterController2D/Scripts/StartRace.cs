@@ -51,4 +51,8 @@ public class StartRace : MonoBehaviour {
 
 		}
 	}
+	void switchTeam()
+	{
+
+	}
 }
