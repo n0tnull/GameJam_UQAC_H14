@@ -24,6 +24,9 @@ public class PhysicsPlayerTester : MonoBehaviour
 	private bool _left;
 	private bool _up;
 
+	private bool barPressed = false;		//Checks if an axis is in motion
+
+
 
 
 	void Awake()
@@ -66,9 +69,23 @@ public class PhysicsPlayerTester : MonoBehaviour
 	{
 		// a minor bit of trickery here. FixedUpdate sets _up to false so to ensure we never miss any jump presses we leave _up
 		// set to true if it was true the previous frame
-		_up = _up || Input.GetKeyDown( KeyCode.UpArrow );
-		_right = Input.GetKey( KeyCode.RightArrow );
-		_left = Input.GetKey( KeyCode.LeftArrow );
+		_up = _up || Input.GetButtonDown("Jump" );
+		var foo = Input.GetAxis("Horizontal");
+
+		if (foo > 0) { //AxisDown
+			_right = true;
+			_left = false;
+			barPressed = true;
+		} else if (foo < 0) { //AxisUp
+			_left = true;
+			_right = false;
+			barPressed = true;
+		} else 
+		{
+			_left = false;
+			_right = false;
+			barPressed = false;
+		}
 	}
 
 
