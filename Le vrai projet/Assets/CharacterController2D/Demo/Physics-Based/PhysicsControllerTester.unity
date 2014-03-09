@@ -809,6 +809,10 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6000000, guid: 38673d69b4df84e0db479b452b73489f, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 38673d69b4df84e0db479b452b73489f, type: 2}
   m_RootGameObject: {fileID: 184981484}
@@ -911,7 +915,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSensitivity: .300000012
-  spawnableObjects: []
+  spawnableObjects:
+  - {fileID: 100000, guid: e3a11d56a565f994cb89eb10dabc9d39, type: 2}
 --- !u!212 &809616643
 SpriteRenderer:
   m_ObjectHideFlags: 0
