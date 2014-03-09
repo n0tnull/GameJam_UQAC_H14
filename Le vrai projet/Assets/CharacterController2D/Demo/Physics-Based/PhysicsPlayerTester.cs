@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
+[RequireComponent(typeof(AudioSource))]
 public class PhysicsPlayerTester : MonoBehaviour
 {
 	// movement config
@@ -32,6 +32,9 @@ public class PhysicsPlayerTester : MonoBehaviour
 
 	float propulseTimer = 1;
 	float propulseTimerAcc = 0;
+
+	public AudioClip jumpSound, deathSound;
+	private bool deathSoundPlayed = false;
 
 
 	void Awake()
@@ -177,6 +180,11 @@ public class PhysicsPlayerTester : MonoBehaviour
 	{
 		dead = true;
 		gameObject.GetComponent<CharacterDeath>().OnDeath();
+		if (!deathSoundPlayed)
+		{
+			audio.PlayOneShot (deathSound);
+			deathSoundPlayed = true;
+		}
 	}
 
 	void Disappear()
@@ -264,6 +272,7 @@ public class PhysicsPlayerTester : MonoBehaviour
 		{
 			_velocity.y = Mathf.Sqrt( 2f * jumpHeight * -gravity );
 			_animator.Play( Animator.StringToHash( "Jump" ) );
+			audio.PlayOneShot(jumpSound);
 		}
 		
 		
