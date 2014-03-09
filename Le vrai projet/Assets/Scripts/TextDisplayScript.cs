@@ -70,6 +70,9 @@ public class TextDisplayScript : MonoBehaviour {
 
 		GUI.Label(new Rect(10, 10, 100, 20), "" + race.GameTimer.ToString("F2"));
 
+		GUI.Label(new Rect(Screen.width-100, 25, 100, 20), "High Score: " + 
+		          PlayerPrefs.GetFloat("HighScore/"+Application.loadedLevelName));
+
 		if(GUI.Button (new Rect(0,Screen.height-25,110,20),"Reset blocs"))
 		{
 			BlockManager.Instance.ResetPlacedBlocks();
