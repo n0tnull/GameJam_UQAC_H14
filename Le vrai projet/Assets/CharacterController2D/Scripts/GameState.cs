@@ -16,4 +16,22 @@ public class GameState : MonoBehaviour {
 	void Update () {
 		
 	}
+
+	public int GetScore(int team)
+	{
+		if(team == 1)
+			return score1;
+		if(team == 2)
+			return score2;
+		return 0;
+	}
+
+	public float GetTime(int team)
+	{
+		if(team == 1)
+			return time1;
+		if(team == 2)
+			return time2;
+		return 0;
+	}
 }

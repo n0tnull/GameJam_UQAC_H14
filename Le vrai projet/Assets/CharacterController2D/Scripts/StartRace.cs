@@ -14,6 +14,10 @@ public class StartRace : MonoBehaviour {
 	private bool playerTimerStarted = false;
 	private TeamsScore score;
 	private JoystickCursor screenCursor;
+	private bool ending = false;
+
+	//Zone des sprites
+	public Sprite stamp1;
 
 	// Use this for initialization
 	void Start () 
@@ -38,6 +42,12 @@ public class StartRace : MonoBehaviour {
 			Bloc bloc = objet.GetComponent<Bloc>();
 			if(bloc != null)
 			{
+				/*Sprite sprite = new Sprite();
+				Rect rect = new Rect(0, 0, bloc.renderer.bounds.size.x*100, bloc.renderer.bounds.size.y*100);
+				sprite = Sprite.Create(stamp1.texture, rect,new Vector2(0,0));
+
+				bloc.gameObject.GetComponent<SpriteRenderer>().sprite = sprite;*/
+
 				bloc.SetInitialCoordinates(bloc.transform.position.x,bloc.transform.position.y);
 				BlockManager.Instance.AddBlock(bloc);
 			}
@@ -93,7 +103,6 @@ public class StartRace : MonoBehaviour {
 					gameObject.GetComponent<PhysicsPlayerTester>().enabled = true;
 					gameObject.rigidbody2D.isKinematic= true;
 					playerTimerStarted = true;
-
 				}
 			}
 		}
@@ -139,6 +148,7 @@ public class StartRace : MonoBehaviour {
 		{
 			GameState.score2= score.getScore(2);
 			GameState.time2=starTimerAcc;
+			Application.LoadLevel ("win");
 		}
 	}
 
