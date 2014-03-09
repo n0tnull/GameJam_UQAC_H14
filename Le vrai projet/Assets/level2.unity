@@ -247,7 +247,7 @@ Transform:
   m_PrefabInternal: {fileID: 1349907687}
   m_GameObject: {fileID: 2896886}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 168.13588, y: -22.2065639, z: 0}
+  m_LocalPosition: {x: -13.9748268, y: 3.79504251, z: 0}
   m_LocalScale: {x: .800000012, y: .800000012, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2911,9 +2911,6 @@ MonoBehaviour:
   selectFrame: {fileID: 2800000, guid: 72b24ccc3f6a3e64aaf69d83195513a8, type: 3}
   squareTexture: {fileID: 2800000, guid: 3678ab417ea757d49ba2990b0e2acd38, type: 3}
   triangleTexture: {fileID: 2800000, guid: 04f5e87c137e68a4e9039d50b8a9a23c, type: 3}
-  maxBlock: 10
-  squareTexture: {fileID: 0}
-  triangleTexture: {fileID: 0}
   maxBlock: 10
 --- !u!212 &809616643
 SpriteRenderer:
@@ -7626,6 +7623,10 @@ Prefab:
     - target: {fileID: 100000, guid: d1c9f61051a2fd541888596db5cb614f, type: 2}
       propertyPath: m_Name
       value: curseur
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d1c9f61051a2fd541888596db5cb614f, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d1c9f61051a2fd541888596db5cb614f, type: 2}
