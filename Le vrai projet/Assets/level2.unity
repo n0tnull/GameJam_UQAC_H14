@@ -2912,9 +2912,6 @@ MonoBehaviour:
   squareTexture: {fileID: 2800000, guid: 3678ab417ea757d49ba2990b0e2acd38, type: 3}
   triangleTexture: {fileID: 2800000, guid: 04f5e87c137e68a4e9039d50b8a9a23c, type: 3}
   maxBlock: 10
-  squareTexture: {fileID: 0}
-  triangleTexture: {fileID: 0}
-  maxBlock: 10
 --- !u!212 &809616643
 SpriteRenderer:
   m_ObjectHideFlags: 0
