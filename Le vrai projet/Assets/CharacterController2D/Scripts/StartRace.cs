@@ -24,6 +24,7 @@ public class StartRace : MonoBehaviour {
 		Time.timeScale = 0;
 		score = gameObject.GetComponent<TeamsScore> ();
 		InitialiseBlocs();
+		InitialiseEnemies();
 
 	}
 
@@ -37,13 +38,30 @@ public class StartRace : MonoBehaviour {
 		foreach(GameObject objet in GameObject.FindGameObjectsWithTag("Bloc"))
 		{
 			Bloc bloc = objet.GetComponent<Bloc>();
-			bloc.SetInitialCoordinates(bloc.transform.position.x,bloc.transform.position.y);
-			BlockManager.Instance.AddBlock(bloc);
+			if(bloc != null)
+			{
+				bloc.SetInitialCoordinates(bloc.transform.position.x,bloc.transform.position.y);
+				BlockManager.Instance.AddBlock(bloc);
+			}
+		}
+	}
+
+	void InitialiseEnemies()
+	{
+		foreach(GameObject objet in GameObject.FindGameObjectsWithTag("Enemy"))
+		{
+			Enemy enemy = objet.GetComponent<Enemy>();
+			if(enemy != null)
+			{
+				enemy.SetInitialCoordinates(enemy.transform.position.x,enemy.transform.position.y);
+				EnemyManager.Instance.AddEnemy(enemy);
+			}
 		}
 	}
 
 	void RestartLevel()
 	{
+		EnemyManager.Instance.Restart();
 		BlockManager.Instance.Restart();
 		screenCursor.resetBlockCount ();
 	}
