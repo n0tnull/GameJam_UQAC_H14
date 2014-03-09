@@ -129,11 +129,12 @@ public class PhysicsPlayerTester : MonoBehaviour
 		Vector2 dest = -Vector2.up;
 
 		Debug.DrawRay (source, dest, Color.green);
+		int mask = 1 << 9;
+		hit = Physics2D.Raycast (source, dest, 0.3f,mask);
 
-		hit = Physics2D.Raycast (source, dest, 0.3f);
-
-		if(null != hit && null != hit.collider)
+		if( hit != null && hit.collider != null)
 		{
+			Debug.Log (hit.collider.gameObject.name);
 			if(hit.collider.gameObject.name =="IceBloc" || hit.collider.gameObject.name =="IceTriangle" )
 			{
 				onIce = true;
@@ -145,6 +146,10 @@ public class PhysicsPlayerTester : MonoBehaviour
 			else if(hit.collider.gameObject.name =="ElectricBloc" || hit.collider.gameObject.name =="ElectricTriangle" )
 			{
 				Death();
+			}
+			else if(hit.collider.gameObject.name =="FallingBloc" || hit.collider.gameObject.name =="FallingTriangle" )
+			{
+				hit.collider.gameObject.GetComponent<FallingBloc>().ReadyToFall();
 			}
 			else
 			{

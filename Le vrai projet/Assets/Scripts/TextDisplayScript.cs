@@ -33,6 +33,9 @@ public class TextDisplayScript : MonoBehaviour {
 	}
 
 	void OnGUI(){
+
+		GUI.skin = displaySkin;
+
 		if(!race.RaceStarted && !race.TimerVisible)
 		{
 			GUI.Label(new Rect(Screen.width/2-120,Screen.height/2-175,300,100), 
@@ -65,15 +68,15 @@ public class TextDisplayScript : MonoBehaviour {
 			          "Vous avez réussi! Partie terminée.");
 		}
 
-		GUI.Label(new Rect(Screen.width-50, 10, 100, 20), "" + score.getScore(race.GetTeam()) + " pts");
-		GUI.Label(new Rect(Screen.width/2 -30, 10, 100, 50), "" + screenCursor.getBlockCount() + " sur 10 blocs");
+		GUI.Label(new Rect(Screen.width-50, 10, 500, 20), "" + score.getScore(race.GetTeam()) + " pts");
+		GUI.Label(new Rect(Screen.width/2 -30, 10, 500, 50), "" + screenCursor.getBlockCount() + " sur 10 blocs");
 
 		GUI.Label(new Rect(10, 10, 100, 20), "" + race.GameTimer.ToString("F2"));
 
-		GUI.Label(new Rect(Screen.width-100, 25, 100, 20), "High Score: " + 
+		GUI.Label(new Rect(Screen.width-100, 25, 500, 20), "High Score: " + 
 		          PlayerPrefs.GetFloat("HighScore/"+Application.loadedLevelName));
 
-		if(GUI.Button (new Rect(0,Screen.height-25,110,20),"Reset blocs"))
+		if(GUI.Button (new Rect(0,Screen.height-25,310,20),"Reset blocs"))
 		{
 			BlockManager.Instance.ResetPlacedBlocks();
 			screenCursor.resetBlockCount();
