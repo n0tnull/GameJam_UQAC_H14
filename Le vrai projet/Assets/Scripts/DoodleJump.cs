@@ -23,8 +23,9 @@ public class DoodleJump : Enemy
 	void OnCollisionEnter2D(Collision2D coll)
 	{
 		if(coll.gameObject.tag == "Bloc") {
-			if(_SpawnPosition.y > transform.position.y) {
-					StartCoroutine(WaitingForJump());
+			if (coll.gameObject.transform.position.y < transform.position.y) 
+			{
+				StartCoroutine(WaitingForJump());
 			}
 		}
 
