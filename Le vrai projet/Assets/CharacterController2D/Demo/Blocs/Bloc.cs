@@ -15,6 +15,8 @@ public class Bloc : MonoBehaviour
 	float initialX;
 	float initialY;
 
+	public bool hasBeenPlaced;
+
 	public Bloc ()
 	{
 
