@@ -148,8 +148,23 @@ public class StartRace : MonoBehaviour {
 		{
 			GameState.score2= score.getScore(2);
 			GameState.time2=starTimerAcc;
+			CheckHighScore();
+			StartCoroutine(Wait());
 			Application.LoadLevel ("win");
 		}
+	}
+
+	void CheckHighScore()
+	{
+		float littleHighScore = (GameState.score1 >= GameState.score2) ? GameState.score1 : GameState.score2;
+		float highScore = PlayerPrefs.GetFloat("HighScore/"+Application.loadedLevelName);
+		if(littleHighScore > highScore)
+			PlayerPrefs.SetFloat("HighScore/"+Application.loadedLevelName,littleHighScore);
+	}
+
+	IEnumerator Wait()
+	{
+		yield return new WaitForSeconds(5);
 	}
 
 	public int GetTeam()

@@ -4,7 +4,6 @@ using System.Collections;
 public class win : MonoBehaviour {
 
 	public GUISkin displaySkin;
-	public GameState scores;
 	
 	private float 	_btnWidth = 180,
 	_btnHeight = 30,
@@ -27,11 +26,11 @@ public class win : MonoBehaviour {
 		// Make a background box
 		GUI.Box(new Rect(0,0,Screen.width,Screen.height), "Sticker & crafter");
 
-		GUI.Label (new Rect (Screen.width/2-50, Screen.height-130,180, 40), "Score du joueur 2");
-		GUI.Label (new Rect (Screen.width/2-50, Screen.height-100, 180, 40), ""+scores.GetScore(2));
+		GUI.Label (new Rect (Screen.width/2-50, Screen.height-130,180, 40), "Score de l'équipe 2");
+		GUI.Label (new Rect (Screen.width/2-50, Screen.height-100, 180, 40), ""+GameState.score2);
 
-		GUI.Label (new Rect (Screen.width/2-50, Screen.height-230, 180, 40), "Score du joueur 1");
-		GUI.Label (new Rect (Screen.width/2-50, Screen.height-200, 180, 40), ""+scores.GetScore(1));
+		GUI.Label (new Rect (Screen.width/2-50, Screen.height-230, 180, 40), "Score de l'équipe 1");
+		GUI.Label (new Rect (Screen.width/2-50, Screen.height-200, 180, 40), ""+GameState.score1);
 		// Make the first button. If it is pressed, Application.Loadlevel (1) will be executed
 		if(GUI.Button(new Rect(Screen.width/2-_rightOffset,20+_offsetWithTitle,_btnWidth,_btnHeight), "Rejouer niveau 1")) {
 			Application.LoadLevel("level1");
