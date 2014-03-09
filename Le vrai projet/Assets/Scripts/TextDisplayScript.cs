@@ -51,12 +51,13 @@ public class TextDisplayScript : MonoBehaviour {
 			          "La partie est terminée.");
 		}
 		GUI.Label(new Rect(Screen.width-50, 10, 100, 20), "" + score.getScore(race.GetTeam()) + " pts");
-		GUI.Label(new Rect(Screen.width/2 -30, 10, 100, 50), "" + screenCursor.getBlockCount() + "sur 10 bloques");
+		GUI.Label(new Rect(Screen.width/2 -30, 10, 100, 50), "" + screenCursor.getBlockCount() + " sur 10 blocs");
 
 		GUI.Label(new Rect(10, 10, 100, 20), "" + race.GameTimer.ToString("F2"));
 
 		if(GUI.Button(new Rect(0,Screen.height-25,110,20),"Reset des blocs"))
 		{
+			screenCursor.resetBlockCount();
 			BlockManager.Instance.ResetPlacedBlocks();
 		}
 	}
