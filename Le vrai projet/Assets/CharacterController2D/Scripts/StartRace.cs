@@ -14,16 +14,19 @@ public class StartRace : MonoBehaviour {
 	private bool playerTimerStarted = false;
 	private TeamsScore score;
 	private JoystickCursor screenCursor;
+	private bool ending = false;
+
+	//Zone des sprites
+	public Sprite stamp1;
 
 	// Use this for initialization
 	void Start () 
 	{
-		screenCursor = GameObject.Find ("curseur").GetComponent<JoystickCursor> ();
-
 		startPoint = GameObject.Find ("Start");
 		Time.timeScale = 0;
 		score = gameObject.GetComponent<TeamsScore> ();
 		InitialiseBlocs();
+		InitialiseEnemies();
 
 	}
 
@@ -37,15 +40,38 @@ public class StartRace : MonoBehaviour {
 		foreach(GameObject objet in GameObject.FindGameObjectsWithTag("Bloc"))
 		{
 			Bloc bloc = objet.GetComponent<Bloc>();
-			bloc.SetInitialCoordinates(bloc.transform.position.x,bloc.transform.position.y);
-			BlockManager.Instance.AddBlock(bloc);
+			if(bloc != null)
+			{
+				/*Sprite sprite = new Sprite();
+				Rect rect = new Rect(0, 0, bloc.renderer.bounds.size.x*100, bloc.renderer.bounds.size.y*100);
+				sprite = Sprite.Create(stamp1.texture, rect,new Vector2(0,0));
+
+				bloc.gameObject.GetComponent<SpriteRenderer>().sprite = sprite;*/
+
+				bloc.SetInitialCoordinates(bloc.transform.position.x,bloc.transform.position.y);
+				BlockManager.Instance.AddBlock(bloc);
+			}
+		}
+	}
+
+	void InitialiseEnemies()
+	{
+		foreach(GameObject objet in GameObject.FindGameObjectsWithTag("Enemy"))
+		{
+			Enemy enemy = objet.GetComponent<Enemy>();
+			if(enemy != null)
+			{
+				enemy.SetInitialCoordinates(enemy.transform.position.x,enemy.transform.position.y);
+				EnemyManager.Instance.AddEnemy(enemy);
+			}
 		}
 	}
 
 	void RestartLevel()
 	{
+		EnemyManager.Instance.Restart();
 		BlockManager.Instance.Restart();
-		screenCursor.resetBlockCount ();
+		GameObject.Find ("curseur").GetComponent<JoystickCursor> ().resetBlockCount ();
 	}
 	
 	// Update is called once per frame
@@ -77,7 +103,6 @@ public class StartRace : MonoBehaviour {
 					gameObject.GetComponent<PhysicsPlayerTester>().enabled = true;
 					gameObject.rigidbody2D.isKinematic= true;
 					playerTimerStarted = true;
-
 				}
 			}
 		}
@@ -123,7 +148,23 @@ public class StartRace : MonoBehaviour {
 		{
 			GameState.score2= score.getScore(2);
 			GameState.time2=starTimerAcc;
+			CheckHighScore();
+			StartCoroutine(Wait());
+			Application.LoadLevel ("win");
 		}
+	}
+
+	void CheckHighScore()
+	{
+		float littleHighScore = (GameState.score1 >= GameState.score2) ? GameState.score1 : GameState.score2;
+		float highScore = PlayerPrefs.GetFloat("HighScore/"+Application.loadedLevelName);
+		if(littleHighScore > highScore)
+			PlayerPrefs.SetFloat("HighScore/"+Application.loadedLevelName,littleHighScore);
+	}
+
+	IEnumerator Wait()
+	{
+		yield return new WaitForSeconds(5);
 	}
 
 	public int GetTeam()

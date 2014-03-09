@@ -10,6 +10,5 @@ public class IdleBloc : Bloc {
 	
 	// Update is called once per frame
 	void Update () {
-	
 	}
 }

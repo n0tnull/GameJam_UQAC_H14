@@ -38,26 +38,25 @@ public class JoystickCursor : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		objectCameraPosition = Camera.main.WorldToViewportPoint (transform.position);
+		
+		if (objectCameraPosition.x < 0)
+			transform.Translate (1, 0, 0);
+		
+		if (objectCameraPosition.x > 1)
+			transform.Translate (-1, 0, 0);
+		
+		if (objectCameraPosition.y < 0)
+			transform.Translate (0, 1, 0);
+		
+		if (objectCameraPosition.y > 1)
+			transform.Translate (0, -1, 0);
+
 		if (race.RaceStarted)
 		{
 			transform.Translate (Input.GetAxis ("(P2) Mouse X") * moveSensitivity, Input.GetAxis ("(P2) Mouse Y") * moveSensitivity, 0);
 			transform.Translate (Input.GetAxis ("(P2) HorizontalJoy") * moveSensitivity, Input.GetAxis ("(P2) VerticalJoy") * moveSensitivity, 0);
-			
-			objectCameraPosition = Camera.main.WorldToViewportPoint (transform.position);
-			
-			if (objectCameraPosition.x < 0)
-				transform.Translate (1, 0, 0);
-			
-			if (objectCameraPosition.x > 1)
-				transform.Translate (-1, 0, 0);
-			
-			if (objectCameraPosition.y < 0)
-				transform.Translate (0, 1, 0);
-			
-			if (objectCameraPosition.y > 1)
-				transform.Translate (0, -1, 0);
-			
-			transform.Translate (Input.GetAxis ("(P2) Mouse X") * moveSensitivity, Input.GetAxis ("(P2) Mouse Y") * moveSensitivity, 0);
 			
 			if (heldObject)
 			{
@@ -89,6 +88,12 @@ public class JoystickCursor : MonoBehaviour {
 			{
 				if (heldObject)
 					heldObject.transform.Rotate (0, 0, -90);
+			}
+
+			if (Input.GetButtonDown ("(P2) ResetBlocks"))
+			{
+				resetBlockCount();
+				BlockManager.Instance.ResetPlacedBlocks();
 			}
 			
 			if (Input.GetButtonDown ("(P2) SpawnObject") && !heldObject)
