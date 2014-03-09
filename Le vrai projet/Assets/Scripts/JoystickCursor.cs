@@ -72,7 +72,7 @@ public class JoystickCursor : MonoBehaviour {
 
 	void OnGUI()
 	{
-		GUI.DrawTexture (new Rect (Camera.main.pixelWidth - 120,
+		/*GUI.DrawTexture (new Rect (Camera.main.pixelWidth - 120,
 		                           Camera.main.pixelHeight - 120,
 		                           100,
 		                           100), selectFrame);
@@ -80,7 +80,7 @@ public class JoystickCursor : MonoBehaviour {
 		GUI.DrawTexture (new Rect (Camera.main.pixelWidth - 110,
 		                           Camera.main.pixelHeight - 110,
 		                           90,
-		                           90), spawnableObjects [selectedIndex].renderer.material.mainTexture);
+		                           90), spawnableObjects [selectedIndex].renderer.material.mainTexture);*/
 	}
 
 	void grabObject()
