@@ -30,7 +30,7 @@ public class JoystickCursor : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		//Screen.lockCursor = true;
+		Screen.lockCursor = true;
 
 		player = GameObject.Find("Player");
 		race = player.GetComponent<StartRace>();
