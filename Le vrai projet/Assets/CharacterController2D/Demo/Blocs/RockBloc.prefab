@@ -12,7 +12,7 @@ GameObject:
   - 61: {fileID: 6100000}
   - 50: {fileID: 5000000}
   - 114: {fileID: 11400000}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RockBloc
   m_TagString: Bloc
   m_Icon: {fileID: 0}
@@ -67,6 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d18fc4aa30b89a544bb299755c75868e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasBeenPlaced: 0
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

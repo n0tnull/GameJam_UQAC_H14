@@ -42921,6 +42921,7 @@ GameObject:
   - 212: {fileID: 1345269565}
   - 114: {fileID: 1345269564}
   - 60: {fileID: 1345269563}
+  - 50: {fileID: 1345269567}
   m_Layer: 9
   m_Name: FallingTriangle
   m_TagString: Bloc
@@ -42993,6 +42994,22 @@ Transform:
   m_LocalScale: {x: .187542602, y: .187542602, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!50 &1345269567
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5000000, guid: 2f1d7c60bdec74be498603ca5deebe09,
+    type: 2}
+  m_PrefabInternal: {fileID: 952899412}
+  m_GameObject: {fileID: 1345269562}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1001 &1345817966
 Prefab:
   m_ObjectHideFlags: 0
@@ -55214,7 +55231,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Size: {x: 2.5, y: 3.5}
-  m_Center: {x: 0, y: 0}
+  m_Center: {x: 0, y: 1.75}
 --- !u!114 &1730440462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55322,7 +55339,7 @@ Transform:
   m_PrefabInternal: {fileID: 1163981189}
   m_GameObject: {fileID: 1730440458}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.5190201, y: 2.35143399, z: 0}
+  m_LocalPosition: {x: 12.0461884, y: 1.9537971, z: 0}
   m_LocalScale: {x: .200000003, y: .200000003, z: 1}
   m_Children:
   - {fileID: 787172360}
@@ -64620,6 +64637,7 @@ GameObject:
   - 212: {fileID: 2033258986}
   - 114: {fileID: 2033258985}
   - 60: {fileID: 2033258984}
+  - 50: {fileID: 2033258988}
   m_Layer: 9
   m_Name: FallingTriangle
   m_TagString: Bloc
@@ -64692,6 +64710,22 @@ Transform:
   m_LocalScale: {x: .187542602, y: .187542602, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!50 &2033258988
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5000000, guid: 2f1d7c60bdec74be498603ca5deebe09,
+    type: 2}
+  m_PrefabInternal: {fileID: 299840098}
+  m_GameObject: {fileID: 2033258983}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1001 &2036367606
 Prefab:
   m_ObjectHideFlags: 0
