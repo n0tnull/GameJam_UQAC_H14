@@ -12,7 +12,6 @@ public class StartRace : MonoBehaviour {
 	GameObject startPoint;
 	private float playerTimer = 0;
 	private bool playerTimerStarted = false;
-	private List<Bloc> blocs;
 
 	// Use this for initialization
 	void Start () 
@@ -29,24 +28,17 @@ public class StartRace : MonoBehaviour {
 
 	void InitialiseBlocs()
 	{
-		blocs = new List<Bloc>();
 		foreach(GameObject objet in GameObject.FindGameObjectsWithTag("Bloc"))
 		{
 			Bloc bloc = objet.GetComponent<Bloc>();
 			bloc.SetInitialCoordinates(bloc.transform.position.x,bloc.transform.position.y);
-			blocs.Add (bloc);
+			BlockManager.Instance.AddBlock(bloc);
 		}
 	}
 
 	void RestartLevel()
 	{
-		foreach(Bloc bloc in blocs)
-		{
-			if(bloc.hasBeenPlaced)
-				bloc.gameObject.SetActive(false);
-			else
-				bloc.Restart();
-		}
+		BlockManager.Instance.Restart();
 	}
 	
 	// Update is called once per frame

@@ -140,6 +140,7 @@ public class JoystickCursor : MonoBehaviour {
 		heldObject = Instantiate (spawnableObjects [selectedIndex]) as GameObject;
 		heldObject.collider2D.enabled = false;
 		heldObject.GetComponent<Bloc> ().hasBeenPlaced = true;
+		BlockManager.Instance.AddBlock(heldObject.GetComponent<Bloc> ());
 		heldObject.transform.position = transform.position;
 	}
 }
