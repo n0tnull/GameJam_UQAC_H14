@@ -134,8 +134,11 @@ public class StartRace : MonoBehaviour {
 		GameObject.Find ("Main Camera").GetComponent<AudioSource>().Stop ();
 		if(team == 1)
 		{
-			GameState.score1= score.getScore(1);
-			GameState.time1=starTimerAcc;
+			if(GameState.score1 ==0)
+			{
+				GameState.score1= score.getScore(1);
+				GameState.time1=starTimerAcc;
+			}
 			team = 2;
 			Vector2 temp = transform.position;
 			temp.x = startPoint.transform.position.x;
@@ -147,8 +150,11 @@ public class StartRace : MonoBehaviour {
 		}
 		else if(team == 2)
 		{
-			GameState.score2= score.getScore(2);
-			GameState.time2=starTimerAcc;
+			if(GameState.score1 ==0)
+			{
+				GameState.score2= score.getScore(2);
+				GameState.time2=starTimerAcc;
+			}
 			CheckHighScore();
 			StartCoroutine(Wait());
 			Application.LoadLevel ("win");
