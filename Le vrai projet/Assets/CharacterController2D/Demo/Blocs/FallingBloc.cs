@@ -90,4 +90,13 @@ public class FallingBloc : Bloc
 				falling = false;
 		}
 	}
+
+	public void ReadyToFall()
+	{
+		if(collider.GetComponent<CC2DTriggerHelper>().getParentCharacterController().collisionState.below)
+		{
+			if(!falling)
+				shaking = true;
+		}
+	}
 }
