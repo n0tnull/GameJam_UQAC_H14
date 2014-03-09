@@ -4,13 +4,12 @@ using System.Collections;
 public class JoystickCursor : MonoBehaviour {
 
 	public float moveSensitivity = 1.0f;
-	public GameObject[] spawnableObjects;
-
-	public Texture selectFrame;
+	public GameObject squareObject, triangleObject;
+	public Texture selectFrame, squareTexture, triangleTexture;
 
 	private GameObject heldObject;
 	private Vector3 objectCameraPosition;
-	private int selectedIndex = 0;
+	private bool selectedTriangle = false;
 
 	private GameObject player;
 	private StartRace race;
@@ -62,6 +61,23 @@ public class JoystickCursor : MonoBehaviour {
 				else
 					grabObject ();
 			}
+
+			if (Input.GetAxis ("(P2) Mouse ScrollWheel") != 0 || Input.GetButtonDown ("(P2) Select"))
+			{
+				if (!heldObject)
+					selectedTriangle = !selectedTriangle;
+			}
+
+			if (Input.GetButtonDown ("(P2) RotateLeft") || Input.GetAxis ("(P2) Mouse ScrollWheel") > 0)
+			{
+				if (heldObject)
+					heldObject.transform.Rotate (0, 0, 90);
+			}
+			else if (Input.GetButtonDown ("(P2) RotateRight") || Input.GetAxis ("(P2) Mouse ScrollWheel") < 0)
+			{
+				if (heldObject)
+					heldObject.transform.Rotate (0, 0, -90);
+			}
 			
 			if (Input.GetButtonDown ("(P2) SpawnObject") && !heldObject)
 				spawnObject ();
@@ -77,10 +93,16 @@ public class JoystickCursor : MonoBehaviour {
 		                           100,
 		                           100), selectFrame);
 
+		Texture toDraw;
+		if (selectedTriangle)
+			toDraw = triangleTexture;
+		else
+			toDraw = squareTexture;
+
 		GUI.DrawTexture (new Rect (Camera.main.pixelWidth - 110,
 		                           Camera.main.pixelHeight - 110,
-		                           90,
-		                           90), spawnableObjects [selectedIndex].renderer.material.mainTexture);*/
+		                           80,
+		                           80), toDraw);
 	}
 
 	void grabObject()
@@ -137,7 +159,11 @@ public class JoystickCursor : MonoBehaviour {
 
 	void spawnObject()
 	{
-		heldObject = Instantiate (spawnableObjects [selectedIndex]) as GameObject;
+		if (selectedTriangle)
+			heldObject = Instantiate (triangleObject) as GameObject;
+		else
+			heldObject = Instantiate (squareObject) as GameObject;
+
 		heldObject.collider2D.enabled = false;
 		heldObject.GetComponent<Bloc> ().hasBeenPlaced = true;
 		BlockManager.Instance.AddBlock(heldObject.GetComponent<Bloc> ());

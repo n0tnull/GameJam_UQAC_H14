@@ -52,7 +52,7 @@ TextureImporter:
         y: 0
         width: 270
         height: 360
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: maincharaIdle_1
       rect:
@@ -61,7 +61,7 @@ TextureImporter:
         y: 0
         width: 270
         height: 360
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
   spritePackingTag: 
   userData: 
