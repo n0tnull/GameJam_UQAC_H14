@@ -7,13 +7,14 @@ public class AngryBirds : Enemy {
 	public float _Speed = 12;
 	bool movingLeft;
 	private Quaternion _rotation;
+	Vector2 _Pos;
 
 	// Use this for initialization
 	new void Start () {
 		_rotation = new Quaternion(0,0,0,0);
 		base.Start();
 		rigidbody2D.gravityScale = 0;
-		_SpawnPosition = transform.position;
+		_Pos = _SpawnPosition = transform.position;
 		movingLeft = Random.Range(0, 2) <= 0.5;
 	}
 	
@@ -41,6 +42,13 @@ public class AngryBirds : Enemy {
 		} else {
 			rigidbody2D.velocity = new Vector2(_Speed, 0);
 		}
+
+		// On le garde a la meme hauteur...
+		if(transform.position.y != _SpawnPosition.y){
+			_Pos.x = transform.position.x;
+			transform.position = _Pos;
+		}
+
 	}
 
 	void OnCollisionEnter2D(Collision2D coll) {
