@@ -16,6 +16,11 @@ public class JoystickCursor : MonoBehaviour {
 	private GameObject player;
 	private StartRace race;
 
+	public void resetBlockCount()
+	{
+		curBlock = 0;
+	}
+
 	public int getBlockCount()
 	{
 		return curBlock;
