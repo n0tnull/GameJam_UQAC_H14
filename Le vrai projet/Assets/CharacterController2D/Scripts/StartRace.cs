@@ -18,8 +18,6 @@ public class StartRace : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		screenCursor = GameObject.Find ("curseur").GetComponent<JoystickCursor> ();
-
 		startPoint = GameObject.Find ("Start");
 		Time.timeScale = 0;
 		score = gameObject.GetComponent<TeamsScore> ();
@@ -63,7 +61,7 @@ public class StartRace : MonoBehaviour {
 	{
 		EnemyManager.Instance.Restart();
 		BlockManager.Instance.Restart();
-		screenCursor.resetBlockCount ();
+		GameObject.Find ("curseur").GetComponent<JoystickCursor> ().resetBlockCount ();
 	}
 	
 	// Update is called once per frame
