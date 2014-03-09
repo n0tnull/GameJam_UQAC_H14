@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasBeenPlaced: 1
-  _VelocityToKill: 3.5
+  _VelocityToKill: 6.69999981
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
