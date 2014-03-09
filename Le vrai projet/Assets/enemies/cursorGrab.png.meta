@@ -52,7 +52,7 @@ TextureImporter:
         y: 270
         width: 360
         height: 270
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: cursorGrab_1
       rect:
@@ -61,7 +61,7 @@ TextureImporter:
         y: 0
         width: 360
         height: 270
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
   spritePackingTag: 
   userData: 

@@ -27,7 +27,6 @@ public class StartRace : MonoBehaviour {
 		score = gameObject.GetComponent<TeamsScore> ();
 		InitialiseBlocs();
 		InitialiseEnemies();
-
 	}
 
 	public bool RaceStarted {get {return started;} }
@@ -103,6 +102,7 @@ public class StartRace : MonoBehaviour {
 					gameObject.GetComponent<PhysicsPlayerTester>().enabled = true;
 					gameObject.rigidbody2D.isKinematic= true;
 					playerTimerStarted = true;
+					GameObject.Find ("Main Camera").GetComponent<AudioSource>().Play();
 				}
 			}
 		}
@@ -131,6 +131,7 @@ public class StartRace : MonoBehaviour {
 
 	public void switchTeam()
 	{
+		GameObject.Find ("Main Camera").GetComponent<AudioSource>().Stop ();
 		if(team == 1)
 		{
 			GameState.score1= score.getScore(1);
