@@ -5,7 +5,6 @@ public class VictoryBlock : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		rigidbody2D.gravityScale = 0;
 		collider2D.isTrigger = true;
 		// Nothing !
 	}
@@ -16,7 +15,7 @@ public class VictoryBlock : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D (Collider2D coll) {
-		if (coll.gameObject.tag == "Player") {
+		if (coll.gameObject.name == "PlayerTriggerHelper") {
 			Debug.Log("Victory !");
 			Application.LoadLevel ("win");
 		}
