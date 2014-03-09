@@ -42,7 +42,10 @@ public class StartRace : MonoBehaviour {
 	{
 		foreach(Bloc bloc in blocs)
 		{
-			bloc.Restart();
+			if(bloc.hasBeenPlaced)
+				bloc.gameObject.SetActive(false);
+			else
+				bloc.Restart();
 		}
 	}
 	
