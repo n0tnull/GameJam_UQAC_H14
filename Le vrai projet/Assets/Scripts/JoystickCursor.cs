@@ -142,9 +142,9 @@ public class JoystickCursor : MonoBehaviour {
 	{
 		if (heldObject)
 		{
-			heldObject.transform.position = new Vector3(calculateGrid (heldObject.transform.position.x, 1), 
+			/*heldObject.transform.position = new Vector3(calculateGrid (heldObject.transform.position.x, 1), 
 			                                            calculateGrid (heldObject.transform.position.y, 1), 
-			                                            heldObject.transform.position.z);
+			                                            heldObject.transform.position.z);*/
 
 			heldObject.collider2D.enabled = true;
 
@@ -152,7 +152,7 @@ public class JoystickCursor : MonoBehaviour {
 		}
 	}
 
-	int calculateGrid(double D, int d)
+	/*int calculateGrid(double D, int d)
 	{
 		int q, position_nouvelle;
 		double r, choix;
@@ -172,7 +172,7 @@ public class JoystickCursor : MonoBehaviour {
 		}
 
 		return position_nouvelle;
-	}
+	}*/
 
 	void spawnObject()
 	{
