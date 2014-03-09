@@ -25,9 +25,6 @@ public class Menu : MonoBehaviour {
 
 		GUI.skin = displaySkin;
 
-		// Make a background box
-		GUI.Box(new Rect(0,0,Screen.width,Screen.height), "Sticker & crafter");
-
 		// Make the first button. If it is pressed, Application.Loadlevel (1) will be executed
 		if(GUI.Button(new Rect(Screen.width/2-_rightOffset,20+_offsetWithTitle,_btnWidth,_btnHeight), "Niveau 1")) {
 			Application.LoadLevel("level1");
