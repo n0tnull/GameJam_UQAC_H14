@@ -5,7 +5,7 @@ public class win : MonoBehaviour {
 
 	public GUISkin displaySkin;
 	
-	private float 	_btnWidth = 75,
+	private float 	_btnWidth = 180,
 	_btnHeight = 30,
 	_heightOffset = 40,
 	_offsetWithTitle = 50,
