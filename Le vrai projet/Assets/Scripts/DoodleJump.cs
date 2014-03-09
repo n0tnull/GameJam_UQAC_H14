@@ -5,6 +5,7 @@ public class DoodleJump : Enemy
 {
 	public int _JumpTiming = 3;
 	public int _JumpForce = 35;
+	private AudioSource hop;
 
 	// Use this for initialization
 	new void Start()
@@ -12,11 +13,13 @@ public class DoodleJump : Enemy
 		base.Start();
 		_SpawnPosition = transform.position;
 		rigidbody2D.mass = 0.1f;
+		hop= gameObject.GetComponent<AudioSource>();
 	}
 
 	// Make it jump
 	protected override void evilThing()
 	{
+		hop.PlayOneShot (hop.clip);
 		rigidbody2D.AddForce(new Vector2(0, _JumpForce));
 	}
 
