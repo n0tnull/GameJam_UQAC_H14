@@ -6,13 +6,20 @@ public class JoystickCursor : MonoBehaviour {
 	public float moveSensitivity = 1.0f;
 	public GameObject squareObject, triangleObject;
 	public Texture selectFrame, squareTexture, triangleTexture;
+	public int maxBlock = 10;
 
+	private int curBlock = 0;
 	private GameObject heldObject;
 	private Vector3 objectCameraPosition;
 	private bool selectedTriangle = false;
 
 	private GameObject player;
 	private StartRace race;
+
+	public int getBlockCount()
+	{
+		return curBlock;
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -159,14 +166,18 @@ public class JoystickCursor : MonoBehaviour {
 
 	void spawnObject()
 	{
-		if (selectedTriangle)
-			heldObject = Instantiate (triangleObject) as GameObject;
-		else
-			heldObject = Instantiate (squareObject) as GameObject;
+		if(curBlock < maxBlock)
+		{
+			curBlock++;
+			if (selectedTriangle)
+				heldObject = Instantiate (triangleObject) as GameObject;
+			else
+				heldObject = Instantiate (squareObject) as GameObject;
 
-		heldObject.collider2D.enabled = false;
-		heldObject.GetComponent<Bloc> ().hasBeenPlaced = true;
-		BlockManager.Instance.AddBlock(heldObject.GetComponent<Bloc> ());
-		heldObject.transform.position = transform.position;
+			heldObject.collider2D.enabled = false;
+			heldObject.GetComponent<Bloc> ().hasBeenPlaced = true;
+			BlockManager.Instance.AddBlock(heldObject.GetComponent<Bloc> ());
+			heldObject.transform.position = transform.position;
+		}
 	}
 }
