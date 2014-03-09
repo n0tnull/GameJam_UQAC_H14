@@ -85,11 +85,11 @@ public class PhysicsPlayerTester : MonoBehaviour
 
 		var direction = 0f;
 
-		if (Input.GetKey(KeyCode.RightArrow)) 
+		if (Input.GetAxis("(P1) Horizontal") > 0) 
 		{
 			direction = 1;
 		}
-		else if(Input.GetKey(KeyCode.LeftArrow)) 
+		else if(Input.GetAxis("(P1) Horizontal") < 0) 
 		{
 			direction = -1;
 		}

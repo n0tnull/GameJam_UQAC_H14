@@ -11,6 +11,8 @@ public class TextDisplayScript : MonoBehaviour {
 	private PhysicsPlayerTester playerPhysics;
 	private CharacterDeath playerDeath;
 	private TeamsScore score;
+	private GameObject fairy;
+	private JoystickCursor screenCursor;
 
 	// Use this for initialization
 	void Start () {
@@ -19,7 +21,8 @@ public class TextDisplayScript : MonoBehaviour {
 		playerPhysics = player.GetComponent<PhysicsPlayerTester>();
 		playerDeath = player.GetComponent<CharacterDeath>();
 		score = player.GetComponent<TeamsScore>();
-
+		fairy= GameObject.Find ("curseur");
+		screenCursor = fairy.GetComponent<JoystickCursor> ();
 	}
 	
 	// Update is called once per frame
@@ -48,6 +51,7 @@ public class TextDisplayScript : MonoBehaviour {
 			          "La partie est terminée.");
 		}
 		GUI.Label(new Rect(Screen.width-50, 10, 100, 20), "" + score.getScore(race.GetTeam()) + " pts");
+		GUI.Label(new Rect(Screen.width/2 -30, 10, 100, 50), "" + screenCursor.getBlockCount() + "sur 10 bloques");
 
 		GUI.Label(new Rect(10, 10, 100, 20), "" + race.GameTimer.ToString("F2"));
 	}

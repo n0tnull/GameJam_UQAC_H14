@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class IceBloc : MonoBehaviour {
+public class IceBloc : Bloc {
 
 	// Use this for initialization
 	void Start () {

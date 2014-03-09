@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class JoystickCursor : MonoBehaviour {
@@ -6,16 +6,29 @@ public class JoystickCursor : MonoBehaviour {
 	public float moveSensitivity = 1.0f;
 	public GameObject[] spawnableObjects;
 
+	public int blockLimit = 10;
+	private int blockCount =0;
+
+	public Texture selectFrame;
+
 	private GameObject heldObject;
 	private Vector3 objectCameraPosition;
-	private int selectedObject = 0;
+	private int selectedIndex = 0;
 
 	private GameObject player;
 	private StartRace race;
 
+	private Animator _animator;
+
+	public int getBlockCount()
+	{
+		return blockCount;
+	}
+
 	// Use this for initialization
 	void Start () {
 
+		_animator = gameObject.GetComponent<Animator>();
 		//Screen.lockCursor = true;
 
 		player = GameObject.Find("Player");
@@ -56,24 +69,48 @@ public class JoystickCursor : MonoBehaviour {
 			if (Input.GetButtonDown ("(P2) GrabReleaseObject"))
 			{
 				if (heldObject)
+				{
+					_animator.Play( Animator.StringToHash( "Cursor_Idle" ) );
 					releaseObject ();
+				}
 				else
 					grabObject ();
 			}
 			
 			if (Input.GetButtonDown ("(P2) SpawnObject") && !heldObject)
-				spawnObject ();
+			{
+				if(blockCount <= blockLimit)
+				{
+					_animator.Play( Animator.StringToHash( "Grab" ) );
+					spawnObject ();
+				}
+			}
 
 		}
 	
 	}
 
+	void OnGUI()
+	{
+		GUI.DrawTexture (new Rect (Camera.main.pixelWidth - 120,
+		                           Camera.main.pixelHeight - 120,
+		                           100,
+		                           100), selectFrame);
+
+		GUI.DrawTexture (new Rect (Camera.main.pixelWidth - 110,
+		                           Camera.main.pixelHeight - 110,
+		                           90,
+		                           90), spawnableObjects [selectedIndex].renderer.material.mainTexture);
+	}
+
 	void grabObject()
 	{
+
 		foreach (Collider2D c in Physics2D.OverlapPointAll(transform.position))
 		{
-			if (c.CompareTag("movable"))
+			if (c.GetComponent<Bloc>().hasBeenPlaced)
 			{
+
 				heldObject = c.gameObject;
 
 				heldObject.collider2D.enabled = false;
@@ -88,8 +125,6 @@ public class JoystickCursor : MonoBehaviour {
 	{
 		if (heldObject)
 		{
-			//Debug.Log ("d = " + d + ", q = " + q + ", D = " + D + ", r = " + r + ", choix = " + choix + ", position_nouvelle = " + position_nouvelle);
-
 			heldObject.transform.position = new Vector3(calculateGrid (heldObject.transform.position.x, 1), 
 			                                            calculateGrid (heldObject.transform.position.y, 1), 
 			                                            heldObject.transform.position.z);
@@ -124,8 +159,10 @@ public class JoystickCursor : MonoBehaviour {
 
 	void spawnObject()
 	{
-		heldObject = Instantiate (spawnableObjects [selectedObject]) as GameObject;
+		blockCount++;
+		heldObject = Instantiate (spawnableObjects [selectedIndex]) as GameObject;
 		heldObject.collider2D.enabled = false;
+		heldObject.GetComponent<Bloc> ().hasBeenPlaced = true;
 		heldObject.transform.position = transform.position;
 	}
 }
