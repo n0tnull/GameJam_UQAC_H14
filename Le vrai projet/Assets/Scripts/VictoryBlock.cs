@@ -18,7 +18,7 @@ public class VictoryBlock : MonoBehaviour
 	{
 		race = GameObject.Find ("Player").GetComponent<StartRace>();
 		collider2D.isTrigger = true;
-		score = gameObject.GetComponent<TeamsScore> ();
+		score = race.gameObject.GetComponent<TeamsScore> ();
 		// Nothing !
 	}
 	
@@ -46,7 +46,15 @@ public class VictoryBlock : MonoBehaviour
 	{
 		if (coll.gameObject.name == "PlayerTriggerHelper") 
 		{
-			score.getScore(race.team) += 600- starTimerAcc;
+			score.setScore((int) (score.getScore(race.team) + 600- starTimerAcc),race.team) ;
+			if(race.team ==1)
+			{
+				GameState.score1 =score.getScore(1);
+			}
+			if(race.team ==2)
+			{
+				GameState.score2 =score.getScore(2);
+			}
 			win = true;
 			timerStarted = true;
 		}
