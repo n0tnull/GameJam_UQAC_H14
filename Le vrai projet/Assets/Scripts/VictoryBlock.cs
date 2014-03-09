@@ -6,6 +6,7 @@ public class VictoryBlock : MonoBehaviour
 	private float starTimer = 0;
 	private float starTimerAcc = 4;
 	private bool timerStarted = false;
+	private TeamsScore score;
 	public StartRace race;
 	bool win = false;
 
@@ -17,6 +18,7 @@ public class VictoryBlock : MonoBehaviour
 	{
 		race = GameObject.Find ("Player").GetComponent<StartRace>();
 		collider2D.isTrigger = true;
+		score = gameObject.GetComponent<TeamsScore> ();
 		// Nothing !
 	}
 	
@@ -44,6 +46,7 @@ public class VictoryBlock : MonoBehaviour
 	{
 		if (coll.gameObject.name == "PlayerTriggerHelper") 
 		{
+			score.getScore(race.team) += 600- starTimerAcc;
 			win = true;
 			timerStarted = true;
 		}

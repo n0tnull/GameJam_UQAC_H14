@@ -19,4 +19,9 @@ public class TeamsScore : MonoBehaviour {
 	{
 		return  (int)score[team-1];
 	}
+
+	public void setScore(int newScore,int team)
+	{
+		score[team-1] = newScore;
+	}
 }
