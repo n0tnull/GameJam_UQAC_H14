@@ -530,6 +530,7 @@ GameObject:
   - 212: {fileID: 94572988}
   - 114: {fileID: 94572987}
   - 60: {fileID: 94572986}
+  - 50: {fileID: 94572990}
   m_Layer: 9
   m_Name: FallingTriangle
   m_TagString: Bloc
@@ -602,6 +603,22 @@ Transform:
   m_LocalScale: {x: .187542602, y: .187542602, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!50 &94572990
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5000000, guid: 2f1d7c60bdec74be498603ca5deebe09,
+    type: 2}
+  m_PrefabInternal: {fileID: 2029945607}
+  m_GameObject: {fileID: 94572985}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1001 &99080929
 Prefab:
   m_ObjectHideFlags: 0
@@ -1470,6 +1487,7 @@ GameObject:
   - 212: {fileID: 326782117}
   - 114: {fileID: 326782116}
   - 60: {fileID: 326782115}
+  - 50: {fileID: 326782119}
   m_Layer: 9
   m_Name: FallingTriangle
   m_TagString: Bloc
@@ -1542,6 +1560,22 @@ Transform:
   m_LocalScale: {x: .187542602, y: .187542602, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!50 &326782119
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5000000, guid: 2f1d7c60bdec74be498603ca5deebe09,
+    type: 2}
+  m_PrefabInternal: {fileID: 154963909}
+  m_GameObject: {fileID: 326782114}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1001 &362286868
 Prefab:
   m_ObjectHideFlags: 0
@@ -1807,6 +1841,7 @@ GameObject:
   - 212: {fileID: 493696800}
   - 114: {fileID: 493696799}
   - 60: {fileID: 493696798}
+  - 50: {fileID: 493696802}
   m_Layer: 9
   m_Name: FallingTriangle
   m_TagString: Bloc
@@ -1879,6 +1914,22 @@ Transform:
   m_LocalScale: {x: .187542602, y: .187542602, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!50 &493696802
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5000000, guid: 2f1d7c60bdec74be498603ca5deebe09,
+    type: 2}
+  m_PrefabInternal: {fileID: 1015593882}
+  m_GameObject: {fileID: 493696797}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1001 &574796725
 Prefab:
   m_ObjectHideFlags: 0
@@ -2553,6 +2604,7 @@ GameObject:
   - 212: {fileID: 779089387}
   - 114: {fileID: 779089386}
   - 60: {fileID: 779089385}
+  - 50: {fileID: 779089389}
   m_Layer: 9
   m_Name: FallingTriangle
   m_TagString: Bloc
@@ -2625,6 +2677,22 @@ Transform:
   m_LocalScale: {x: 3, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!50 &779089389
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5000000, guid: 2f1d7c60bdec74be498603ca5deebe09,
+    type: 2}
+  m_PrefabInternal: {fileID: 606910320}
+  m_GameObject: {fileID: 779089384}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1 &782415744
 GameObject:
   m_ObjectHideFlags: 0
@@ -3565,6 +3633,7 @@ GameObject:
   - 212: {fileID: 963964036}
   - 114: {fileID: 963964035}
   - 60: {fileID: 963964034}
+  - 50: {fileID: 963964038}
   m_Layer: 9
   m_Name: FallingTriangle
   m_TagString: Bloc
@@ -3637,6 +3706,22 @@ Transform:
   m_LocalScale: {x: .187542602, y: .187542602, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!50 &963964038
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5000000, guid: 2f1d7c60bdec74be498603ca5deebe09,
+    type: 2}
+  m_PrefabInternal: {fileID: 1197524978}
+  m_GameObject: {fileID: 963964033}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1 &984302506
 GameObject:
   m_ObjectHideFlags: 0
@@ -4114,6 +4199,7 @@ GameObject:
   - 212: {fileID: 1030793611}
   - 114: {fileID: 1030793610}
   - 60: {fileID: 1030793609}
+  - 50: {fileID: 1030793613}
   m_Layer: 9
   m_Name: FallingTriangle
   m_TagString: Bloc
@@ -4186,6 +4272,22 @@ Transform:
   m_LocalScale: {x: .187542602, y: .187542602, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!50 &1030793613
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5000000, guid: 2f1d7c60bdec74be498603ca5deebe09,
+    type: 2}
+  m_PrefabInternal: {fileID: 1661974547}
+  m_GameObject: {fileID: 1030793608}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1 &1034404716
 GameObject:
   m_ObjectHideFlags: 0
@@ -4197,6 +4299,7 @@ GameObject:
   - 212: {fileID: 1034404719}
   - 114: {fileID: 1034404718}
   - 60: {fileID: 1034404717}
+  - 50: {fileID: 1034404721}
   m_Layer: 9
   m_Name: FallingTriangle
   m_TagString: Bloc
@@ -4269,6 +4372,22 @@ Transform:
   m_LocalScale: {x: .187542602, y: .187542602, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!50 &1034404721
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5000000, guid: 2f1d7c60bdec74be498603ca5deebe09,
+    type: 2}
+  m_PrefabInternal: {fileID: 416595014}
+  m_GameObject: {fileID: 1034404716}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1001 &1061313957
 Prefab:
   m_ObjectHideFlags: 0
@@ -4328,6 +4447,7 @@ GameObject:
   - 212: {fileID: 1073039283}
   - 114: {fileID: 1073039282}
   - 60: {fileID: 1073039281}
+  - 50: {fileID: 1073039285}
   m_Layer: 9
   m_Name: FallingTriangle
   m_TagString: Bloc
@@ -4400,6 +4520,22 @@ Transform:
   m_LocalScale: {x: .187542602, y: .187542602, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!50 &1073039285
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5000000, guid: 2f1d7c60bdec74be498603ca5deebe09,
+    type: 2}
+  m_PrefabInternal: {fileID: 375101026}
+  m_GameObject: {fileID: 1073039280}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1001 &1092550076
 Prefab:
   m_ObjectHideFlags: 0
@@ -4687,6 +4823,7 @@ GameObject:
   - 212: {fileID: 1120106430}
   - 114: {fileID: 1120106429}
   - 60: {fileID: 1120106428}
+  - 50: {fileID: 1120106432}
   m_Layer: 9
   m_Name: FallingTriangle
   m_TagString: Bloc
@@ -4759,6 +4896,22 @@ Transform:
   m_LocalScale: {x: .187542602, y: .187542602, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!50 &1120106432
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5000000, guid: 2f1d7c60bdec74be498603ca5deebe09,
+    type: 2}
+  m_PrefabInternal: {fileID: 162055570}
+  m_GameObject: {fileID: 1120106427}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1 &1170926958
 GameObject:
   m_ObjectHideFlags: 0
@@ -4770,6 +4923,7 @@ GameObject:
   - 212: {fileID: 1170926961}
   - 114: {fileID: 1170926960}
   - 60: {fileID: 1170926959}
+  - 50: {fileID: 1170926963}
   m_Layer: 9
   m_Name: FallingTriangle
   m_TagString: Bloc
@@ -4842,6 +4996,22 @@ Transform:
   m_LocalScale: {x: .187542602, y: .187542602, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!50 &1170926963
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5000000, guid: 2f1d7c60bdec74be498603ca5deebe09,
+    type: 2}
+  m_PrefabInternal: {fileID: 1763600079}
+  m_GameObject: {fileID: 1170926958}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1 &1195539974
 GameObject:
   m_ObjectHideFlags: 0
@@ -9285,6 +9455,7 @@ GameObject:
   - 212: {fileID: 2011817982}
   - 114: {fileID: 2011817981}
   - 60: {fileID: 2011817980}
+  - 50: {fileID: 2011817984}
   m_Layer: 9
   m_Name: FallingTriangle
   m_TagString: Bloc
@@ -9357,6 +9528,22 @@ Transform:
   m_LocalScale: {x: .187542602, y: .187542602, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!50 &2011817984
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5000000, guid: 2f1d7c60bdec74be498603ca5deebe09,
+    type: 2}
+  m_PrefabInternal: {fileID: 1765068779}
+  m_GameObject: {fileID: 2011817979}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1001 &2029945607
 Prefab:
   m_ObjectHideFlags: 0
