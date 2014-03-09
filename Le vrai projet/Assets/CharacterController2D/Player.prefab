@@ -15,9 +15,9 @@ GameObject:
   - 61: {fileID: 6100000}
   - 50: {fileID: 5000000}
   - 114: {fileID: 11400004}
+  - 114: {fileID: 11400010}
   - 114: {fileID: 11400008}
   - 114: {fileID: 11400006}
-  - 114: {fileID: 11400010}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -32,12 +32,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< HEAD
-  m_LocalPosition: {x: -14.0535955, y: 1.8419981, z: 0}
-=======
-  m_LocalPosition: {x: -14.2179432, y: 2.11507702, z: 0}
->>>>>>> 248e82d721cf62b64b9b91959b2320370111cb13
-  m_LocalScale: {x: .550000012, y: .550000012, z: 2}
+  m_LocalPosition: {x: -13.8856163, y: 1.69976473, z: 0}
+  m_LocalScale: {x: .800000012, y: .800000012, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!50 &5000000
@@ -64,11 +60,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-<<<<<<< HEAD
   m_Size: {x: 2, y: 3.5999999}
-=======
-  m_Size: {x: .5, y: .550000012}
->>>>>>> 248e82d721cf62b64b9b91959b2320370111cb13
   m_Center: {x: 0, y: 0}
 --- !u!95 &9500000
 Animator:
@@ -99,7 +91,7 @@ MonoBehaviour:
   runSpeed: 18
   groundDamping: 10
   inAirDamping: 5
-  jumpHeight: 3
+  jumpHeight: 4
   dead: 0
 --- !u!114 &11400002
 MonoBehaviour:
@@ -163,7 +155,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cad37859cefe5243b866f4b087b916e, type: 3}
+  m_Script: {fileID: 11500000, guid: ffe4c4c43f7fd6d4cb7e0f1d3c325b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11400008
@@ -174,7 +166,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffe4c4c43f7fd6d4cb7e0f1d3c325b96, type: 3}
+  m_Script: {fileID: 11500000, guid: 1cad37859cefe5243b866f4b087b916e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11400010

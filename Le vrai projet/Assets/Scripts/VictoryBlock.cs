@@ -18,7 +18,7 @@ public class VictoryBlock : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D coll) {
 		if (coll.gameObject.tag == "Player") {
 			Debug.Log("Victory !");
-			//TODO: Victory stuff here.
+			Application.LoadLevel ("win");
 		}
 	}
 

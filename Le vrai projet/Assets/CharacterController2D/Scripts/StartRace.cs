@@ -12,13 +12,16 @@ public class StartRace : MonoBehaviour {
 	GameObject startPoint;
 	private float playerTimer = 0;
 	private bool playerTimerStarted = false;
+	private TeamsScore score;
 
 	// Use this for initialization
 	void Start () 
 	{
 		startPoint = GameObject.Find ("Start");
 		Time.timeScale = 0;
+		score = gameObject.GetComponent<TeamsScore> ();
 		InitialiseBlocs();
+
 	}
 
 	public bool RaceStarted {get {return started;} }
@@ -101,6 +104,8 @@ public class StartRace : MonoBehaviour {
 	{
 		if(team == 1)
 		{
+			GameState.score1= score.getScore(1);
+			GameState.time1=starTimerAcc;
 			team = 2;
 			Vector2 temp = transform.position;
 			temp.x = startPoint.transform.position.x;
@@ -112,6 +117,8 @@ public class StartRace : MonoBehaviour {
 		}
 		else if(team == 2)
 		{
+			GameState.score2= score.getScore(2);
+			GameState.time2=starTimerAcc;
 		}
 	}
 
