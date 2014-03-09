@@ -15,6 +15,7 @@ public class JoystickCursor : MonoBehaviour {
 
 	private GameObject player;
 	private StartRace race;
+	private Animator anim;
 
 	public void resetBlockCount()
 	{
@@ -33,6 +34,7 @@ public class JoystickCursor : MonoBehaviour {
 
 		player = GameObject.Find("Player");
 		race = player.GetComponent<StartRace>();
+		anim = gameObject.GetComponent<Animator> ();
 	
 	}
 	
@@ -124,10 +126,12 @@ public class JoystickCursor : MonoBehaviour {
 
 	void grabObject()
 	{
+
 		foreach (Collider2D c in Physics2D.OverlapPointAll(transform.position))
 		{
 			if (c.GetComponent<Bloc>().hasBeenPlaced)
 			{
+				anim.Play (Animator.StringToHash ("Grab"));
 				heldObject = c.gameObject;
 
 				heldObject.collider2D.enabled = false;
@@ -142,6 +146,7 @@ public class JoystickCursor : MonoBehaviour {
 	{
 		if (heldObject)
 		{
+			anim.Play (Animator.StringToHash ("Cursor_Idle"));
 			heldObject.transform.position = new Vector3(calculateGrid (heldObject.transform.position.x, 1), 
 			                                            calculateGrid (heldObject.transform.position.y, 1), 
 			                                            heldObject.transform.position.z);
@@ -183,6 +188,8 @@ public class JoystickCursor : MonoBehaviour {
 				heldObject = Instantiate (triangleObject) as GameObject;
 			else
 				heldObject = Instantiate (squareObject) as GameObject;
+
+			anim.Play (Animator.StringToHash ("Grab"));
 
 			heldObject.collider2D.enabled = false;
 			heldObject.GetComponent<Bloc> ().hasBeenPlaced = true;
