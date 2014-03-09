@@ -51,13 +51,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d2450bb0dafd44a9bdc67edb147f104, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  race: {fileID: 0}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_LightmapIndex: 255
@@ -72,8 +73,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: 27b3258acbc78824ea177fbd90e5a91d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300144, guid: 0370ca45554824e75921d7740a78749e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: .286274523}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
