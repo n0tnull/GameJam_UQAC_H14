@@ -44,6 +44,7 @@ public class FallingBloc : Bloc
 				//rb.gravityScale = 1;
 				//rb.fixedAngle = true;
 				rigidbody2D.isKinematic = false;
+				gameObject.layer = 0;
 			}
 		}
 		/*if(falling)
