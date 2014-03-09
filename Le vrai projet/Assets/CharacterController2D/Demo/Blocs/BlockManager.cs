@@ -55,6 +55,17 @@ public class BlockManager
 		}
 	}
 
+	public void ResetPlacedBlocks()
+	{
+		foreach(Bloc bloc in blocs)
+		{
+			if(bloc.hasBeenPlaced)
+			{
+				bloc.gameObject.SetActive(false);
+			}
+		}
+	}
+
 	public void Clear()
 	{
 		blocs.Clear();

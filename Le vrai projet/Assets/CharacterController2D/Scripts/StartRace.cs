@@ -13,10 +13,13 @@ public class StartRace : MonoBehaviour {
 	private float playerTimer = 0;
 	private bool playerTimerStarted = false;
 	private TeamsScore score;
+	private JoystickCursor screenCursor;
 
 	// Use this for initialization
 	void Start () 
 	{
+		screenCursor = GameObject.Find ("curseur").GetComponent<JoystickCursor> ();
+
 		startPoint = GameObject.Find ("Start");
 		Time.timeScale = 0;
 		score = gameObject.GetComponent<TeamsScore> ();
@@ -42,6 +45,7 @@ public class StartRace : MonoBehaviour {
 	void RestartLevel()
 	{
 		BlockManager.Instance.Restart();
+		screenCursor.resetBlockCount ();
 	}
 	
 	// Update is called once per frame
