@@ -68,8 +68,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d18fc4aa30b89a544bb299755c75868e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasBeenPlaced: 1
-  _VelocityToKill: 6.69999981
+  hasBeenPlaced: 0
+  _VelocityToKill: 250
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

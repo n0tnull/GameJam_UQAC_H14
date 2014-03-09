@@ -37,6 +37,11 @@ public class JoystickCursor : MonoBehaviour {
 		anim = gameObject.GetComponent<Animator> ();
 	
 	}
+
+	void OnDisable()
+	{
+		Screen.lockCursor = false;
+	}
 	
 	// Update is called once per frame
 	void Update () {
