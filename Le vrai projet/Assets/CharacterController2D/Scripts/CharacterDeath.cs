@@ -30,6 +30,7 @@ public class CharacterDeath : MonoBehaviour
 			}
 			else
 			{
+
 				starTimerAcc = 0;
 				timerStarted = false;
 				gameObject.GetComponent<StartRace>().switchTeam();
