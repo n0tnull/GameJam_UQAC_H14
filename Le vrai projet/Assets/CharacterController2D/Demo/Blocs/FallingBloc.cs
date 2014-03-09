@@ -94,10 +94,7 @@ public class FallingBloc : Bloc
 
 	public void ReadyToFall()
 	{
-		if(collider.GetComponent<CC2DTriggerHelper>().getParentCharacterController().collisionState.below)
-		{
 			if(!falling)
 				shaking = true;
-		}
 	}
 }
