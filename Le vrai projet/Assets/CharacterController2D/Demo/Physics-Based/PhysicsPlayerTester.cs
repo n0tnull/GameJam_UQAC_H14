@@ -130,7 +130,7 @@ public class PhysicsPlayerTester : MonoBehaviour
 
 		Debug.DrawRay (source, dest, Color.green);
 
-		hit = Physics2D.Raycast (source, dest, 1);
+		hit = Physics2D.Raycast (source, dest, 0.3f);
 
 		if(null != hit && null != hit.collider)
 		{
@@ -138,11 +138,24 @@ public class PhysicsPlayerTester : MonoBehaviour
 			{
 				onIce = true;
 			}
+			else if(hit.collider.gameObject.name =="PicsBloc" || hit.collider.gameObject.name =="PicsTriangle" )
+			{
+				Death();
+			}
+			else if(hit.collider.gameObject.name =="ElectricBloc" || hit.collider.gameObject.name =="ElectricTriangle" )
+			{
+				Death();
+			}
 			else
+			{
 				onIce = false;
+			}
+
 		}
 		else
+		{
 			onIce = false;
+		}
 	}
 
 	void OnIceEnter()
