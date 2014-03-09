@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(AudioSource))]
 public class JoystickCursor : MonoBehaviour {
 
 	public float moveSensitivity = 1.0f;
 	public GameObject squareObject, triangleObject;
 	public Texture selectFrame, squareTexture, triangleTexture;
 	public int maxBlock = 10;
+	public AudioClip spawnSound, grabSound, releaseSound;
 
 	private int curBlock = 0;
 	private GameObject heldObject;
@@ -143,6 +145,8 @@ public class JoystickCursor : MonoBehaviour {
 				heldObject.collider2D.enabled = false;
 				heldObject.GetComponent<SpriteRenderer>().sortingOrder = 1;
 
+				audio.PlayOneShot(grabSound);
+
 				return;
 			}
 		}
@@ -160,6 +164,8 @@ public class JoystickCursor : MonoBehaviour {
 			heldObject.collider2D.enabled = true;
 
 			heldObject = null;
+
+			audio.PlayOneShot (releaseSound);
 		}
 	}
 
@@ -201,6 +207,8 @@ public class JoystickCursor : MonoBehaviour {
 			heldObject.GetComponent<Bloc> ().hasBeenPlaced = true;
 			BlockManager.Instance.AddBlock(heldObject.GetComponent<Bloc> ());
 			heldObject.transform.position = transform.position;
+
+			audio.PlayOneShot(spawnSound);
 		}
 	}
 }
