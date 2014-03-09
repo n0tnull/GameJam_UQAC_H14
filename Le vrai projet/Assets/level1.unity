@@ -1082,7 +1082,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasBeenPlaced: 1
-  _VelocityToKill: 6.69999981
+  _VelocityToKill: 250
 --- !u!114 &30340590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4787,6 +4787,7 @@ GameObject:
   - 212: {fileID: 142979481}
   - 114: {fileID: 142979480}
   - 60: {fileID: 142979479}
+  - 114: {fileID: 142979483}
   m_Layer: 9
   m_Name: IceTriangle
   m_TagString: Bloc
@@ -4859,6 +4860,18 @@ Transform:
   m_LocalScale: {x: -1.12525558, y: .562627792, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &142979483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: 5cdf337cc2ad8424599e9ec7298bfdb0,
+    type: 2}
+  m_PrefabInternal: {fileID: 207419517}
+  m_GameObject: {fileID: 142979478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d444bd2f095002d46be49b23d5498384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &143506097
 Prefab:
   m_ObjectHideFlags: 0
@@ -11038,6 +11051,7 @@ GameObject:
   - 212: {fileID: 315922712}
   - 114: {fileID: 315922711}
   - 60: {fileID: 315922710}
+  - 114: {fileID: 315922714}
   m_Layer: 9
   m_Name: IceTriangle
   m_TagString: Bloc
@@ -11110,6 +11124,18 @@ Transform:
   m_LocalScale: {x: -1.68788397, y: .562627792, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &315922714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: 5cdf337cc2ad8424599e9ec7298bfdb0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1614814957}
+  m_GameObject: {fileID: 315922709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d444bd2f095002d46be49b23d5498384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &317523135
 GameObject:
   m_ObjectHideFlags: 0
@@ -15643,6 +15669,7 @@ GameObject:
   - 212: {fileID: 434427894}
   - 114: {fileID: 434427893}
   - 60: {fileID: 434427892}
+  - 114: {fileID: 434427896}
   m_Layer: 9
   m_Name: IceTriangle
   m_TagString: Bloc
@@ -15715,6 +15742,18 @@ Transform:
   m_LocalScale: {x: .187542602, y: .187542602, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &434427896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: 5cdf337cc2ad8424599e9ec7298bfdb0,
+    type: 2}
+  m_PrefabInternal: {fileID: 631196500}
+  m_GameObject: {fileID: 434427891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d444bd2f095002d46be49b23d5498384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &435340673
 Prefab:
   m_ObjectHideFlags: 0
@@ -18654,7 +18693,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasBeenPlaced: 1
-  _VelocityToKill: 6.69999981
+  _VelocityToKill: 250
 --- !u!114 &529048174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22483,7 +22522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasBeenPlaced: 1
-  _VelocityToKill: 6.69999981
+  _VelocityToKill: 250
 --- !u!114 &645188111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38999,7 +39038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasBeenPlaced: 1
-  _VelocityToKill: 6.69999981
+  _VelocityToKill: 250
 --- !u!114 &1097465088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40301,7 +40340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasBeenPlaced: 1
-  _VelocityToKill: 6.69999981
+  _VelocityToKill: 250
 --- !u!114 &1140351109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52806,6 +52845,7 @@ GameObject:
   - 212: {fileID: 1467277057}
   - 114: {fileID: 1467277056}
   - 60: {fileID: 1467277055}
+  - 114: {fileID: 1467277059}
   m_Layer: 9
   m_Name: IceTriangle
   m_TagString: Bloc
@@ -52878,6 +52918,18 @@ Transform:
   m_LocalScale: {x: .187542602, y: .187542602, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &1467277059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: 5cdf337cc2ad8424599e9ec7298bfdb0,
+    type: 2}
+  m_PrefabInternal: {fileID: 2063286423}
+  m_GameObject: {fileID: 1467277054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d444bd2f095002d46be49b23d5498384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1471451718
 Prefab:
   m_ObjectHideFlags: 0
@@ -62640,7 +62692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasBeenPlaced: 1
-  _VelocityToKill: 6.69999981
+  _VelocityToKill: 250
 --- !u!114 &1771241294
 MonoBehaviour:
   m_ObjectHideFlags: 0
