@@ -40,7 +40,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   starTimer: 4
-  rock: {fileID: 100000, guid: 89a4b8c33447f52449648b3197585f62, type: 2}
+  prefab: {fileID: 100000, guid: 89a4b8c33447f52449648b3197585f62, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
