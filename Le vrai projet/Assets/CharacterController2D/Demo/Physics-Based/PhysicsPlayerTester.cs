@@ -147,6 +147,10 @@ public class PhysicsPlayerTester : MonoBehaviour
 			{
 				Death();
 			}
+			else if(hit.collider.gameObject.name =="FallingBloc" || hit.collider.gameObject.name =="FallingTriangle" )
+			{
+				hit.collider.gameObject.GetComponent<FallingBloc>().ReadyToFall();
+			}
 			else
 			{
 				onIce = false;
