@@ -11,6 +11,7 @@ public class PhysicsPlayerTester : MonoBehaviour
 	public float inAirDamping = 5f;
 	public float jumpHeight = 3f;
 	public bool dead = false;
+	private bool propulsing = false;
 
 	[HideInInspector]
 	private float normalizedHorizontalSpeed = 0;
@@ -29,7 +30,8 @@ public class PhysicsPlayerTester : MonoBehaviour
 
 	private bool barPressed = false;		//Checks if an axis is in motion
 
-
+	float propulseTimer = 1;
+	float propulseTimerAcc = 0;
 
 
 	void Awake()
@@ -49,8 +51,10 @@ public class PhysicsPlayerTester : MonoBehaviour
 
 	void onControllerCollider( RaycastHit2D hit )
 	{
-		if (!dead){
-			if (isDeadly(hit.collider.gameObject)){
+		if (!dead)
+		{
+			if (isDeadly(hit.collider.gameObject))
+			{
 				Death();
 			}
 		}
@@ -58,13 +62,15 @@ public class PhysicsPlayerTester : MonoBehaviour
 
 	void onTriggerEnterEvent( Collider2D col )
 	{
-		Debug.Log( "onTriggerEnterEvent: " + col.gameObject.name );
+		if(col.gameObject.name == "Propulser")
+		{
+			Propulse();
+		}
 	}
 
 
 	void onTriggerExitEvent( Collider2D col )
 	{
-		Debug.Log( "onTriggerExitEvent: " + col.gameObject.name );
 	}
 
 	#endregion
@@ -166,6 +172,12 @@ public class PhysicsPlayerTester : MonoBehaviour
 		_animator.Play( Animator.StringToHash( "Idle" ) );
 	}
 
+	void Propulse()
+	{
+		runSpeed = 14f;
+		propulsing = true;
+	}
+
 	void FixedUpdate()
 	{
 		// grab our current _velocity to use as a base for all calculations
@@ -215,6 +227,19 @@ public class PhysicsPlayerTester : MonoBehaviour
 		}
 		else
 			groundDamping = 10;
+
+		if(propulsing)
+		{
+			if(propulseTimerAcc < propulseTimer)
+				propulseTimerAcc += Time.deltaTime;
+			else
+			{
+				Debug.Log ("End Propulse");
+				runSpeed = 8f;
+				propulseTimerAcc = 0;
+				propulsing = false;
+			}
+		}
 
 		// we can only jump whilst grounded
 		if( _controller.isGrounded && _up && !dead)
